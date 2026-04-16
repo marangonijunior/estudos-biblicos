@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>E se fosse você? — Estudos Bíblicos</title>
+<meta name="description" content="Nove momentos decisivos na Bíblia: Moisés, Noé e Ló. Se você estivesse no lugar deles, o que teria feito?">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="E se fosse você? — Estudos Bíblicos">
+<meta property="og:description" content="Nove momentos decisivos na vida de Moisés, Noé e Ló. A pergunta que não sai da cabeça.">
+
+<!-- Base Styles -->
+<link rel="stylesheet" href="../assets/css/base.css">
+
+<!-- Specific styles for this study -->
+<style>
+  html, body {
+    overflow: hidden;
+    background: var(--ink);
+  }
+
+  /* ===== Slide type variations ===== */
+  .slide-title { 
+    background: var(--ink); 
+    color: var(--parchment); 
+  }
+  
+  .slide-title .bg-word {
+    position: absolute;
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(20rem, 45vw, 50rem);
+    color: var(--parchment);
+    opacity: 0.04;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    line-height: 0.8;
+    letter-spacing: -0.05em;
+    user-select: none;
+  }
+  
+  .slide-title h1 {
+    position: relative;
+    z-index: 2;
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  .slide-title h1 .line2 {
+    display: block;
+    font-weight: 800;
+    font-style: normal;
+    color: var(--gold-light);
+  }
+  
+  .slide-title .tagline {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-top: 2.5rem;
+    opacity: 0.8;
+  }
+  
+  .slide-title .sub {
+    max-width: 42ch;
+    margin-top: 1.8rem;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    opacity: 0.75;
+    font-style: italic;
+  }
+
+  /* ===== Opener slides ===== */
+  .slide-opener .numeral {
+    font-family: var(--display);
+    font-weight: 200;
+    font-style: italic;
+    font-size: clamp(8rem, 18vw, 16rem);
+    color: var(--gold);
+    line-height: 0.9;
+    margin-bottom: -1rem;
+    display: block;
+  }
+  
+  .slide-opener h2 {
+    font-weight: 600;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    margin-bottom: 2rem;
+  }
+  
+  .slide-opener .opener-text {
+    max-width: 60ch;
+    font-size: 1.35rem;
+    line-height: 1.6;
+    color: #3a332c;
+    border-left: 2px solid var(--gold);
+    padding-left: 1.5rem;
+  }
+
+  /* ===== Story slides ===== */
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  
+  .story-left .verse-ref {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--ink);
+    color: var(--parchment);
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+  }
+  
+  .story-left h2 {
+    margin-bottom: 2rem;
+    font-weight: 600;
+  }
+  
+  .story-left .character {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin-bottom: 0.75rem;
+  }
+
+  .beats { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 1.5rem; 
+  }
+  
+  .beat {
+    position: relative;
+    padding-left: 2.5rem;
+  }
+  
+  .beat::before {
+    content: attr(data-step);
+    position: absolute;
+    left: 0; top: 0.1rem;
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.8rem;
+    color: var(--gold);
+    line-height: 1;
+  }
+  
+  .beat h4 {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink);
+    opacity: 0.55;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  
+  .beat p {
+    font-size: 1.1rem;
+    line-height: 1.55;
+    color: #3a332c;
+  }
+
+  /* ===== Reflection slides ===== */
+  .slide-reflect .bg-quote {
+    position: absolute;
+    top: 2rem; left: 4rem;
+    font-family: var(--display);
+    font-size: 20rem;
+    line-height: 1;
+    color: var(--gold);
+    opacity: 0.15;
+    font-style: italic;
+    user-select: none;
+  }
+  
+  .slide-reflect h2 {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--parchment);
+    position: relative;
+    z-index: 2;
+  }
+  
+  .slide-reflect h2 .emphasis {
+    font-weight: 800;
+    font-style: normal;
+    color: var(--gold-light);
+  }
+  
+  .slide-reflect .questions {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    max-width: 60ch;
+  }
+  
+  .slide-reflect .questions p {
+    font-size: 1.35rem;
+    line-height: 1.5;
+    padding-left: 1.5rem;
+    border-left: 1px solid var(--gold);
+    opacity: 0.9;
+  }
+
+  /* ===== Consequence slide ===== */
+  .slide-consequence .consequence-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  
+  .consequence-label {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 4rem;
+    color: var(--crimson);
+    line-height: 0.9;
+    white-space: nowrap;
+    transform: rotate(-3deg);
+    transform-origin: left top;
+  }
+  
+  .consequence-text {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    max-width: 55ch;
+    padding-top: 1rem;
+    border-top: 1px solid var(--ink);
+  }
+
+  /* ===== Closing slide ===== */
+  .slide-closing .inner {
+    max-width: 700px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .slide-closing h2 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: 2rem;
+  }
+  
+  .slide-closing h2 strong {
+    display: block;
+    font-weight: 800;
+    font-style: normal;
+    color: var(--gold-light);
+    margin-top: 0.5rem;
+  }
+  
+  .slide-closing .signature {
+    margin-top: 3rem;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    opacity: 0.5;
+  }
+  
+  .ornament {
+    font-family: var(--display);
+    font-size: 3rem;
+    color: var(--gold);
+    margin: 2rem 0;
+    letter-spacing: 1rem;
+  }
+
+  /* ===== Key hint ===== */
+  .keyhint {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 1000;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: rgba(244, 236, 220, 0.5);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    background: rgba(26, 21, 18, 0.6);
+    backdrop-filter: blur(6px);
+    padding: 0.5rem 0.8rem;
+    border-radius: 100px;
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 900px) {
+    .story-grid { 
+      grid-template-columns: 1fr; 
+      gap: 2.5rem; 
+    }
+    
+    .consequence-grid { 
+      grid-template-columns: 1fr; 
+      gap: 1.5rem; 
+    }
+    
+    .consequence-label { 
+      font-size: 2.5rem; 
+      transform: none; 
+    }
+    
+    .slide-reflect .bg-quote { 
+      font-size: 10rem; 
+      left: 1rem; 
+      top: 0.5rem; 
+    }
+    
+    .keyhint { 
+      display: none; 
+    }
+  }
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<div class="deck" id="deck">
+
+  <!-- SLIDE 1: Capa -->
+  <section class="slide slide-title theme-dark active">
+    <span class="corner-mark tl">Estudo bíblico · 25 slides × 3 atos</span>
+    <span class="corner-mark br">Moisés · Noé · Ló</span>
+    <div class="bg-word fade-in">se</div>
+    <div class="slide-inner" style="text-align: left;">
+      <p class="eyebrow anim-1" style="color: var(--gold-light);">Uma reflexão em três atos</p>
+      <h1 class="anim-2">
+        E&nbsp;se
+        <span class="line2">fosse&nbsp;você?</span>
+      </h1>
+      <p class="sub anim-3">
+        Nove momentos decisivos na Bíblia — e a pergunta que não sai da cabeça de ninguém que os lê com atenção.
+      </p>
+      <p class="tagline anim-4">Abra · Leia · Responda</p>
+    </div>
+  </section>
+
+  <!-- SLIDE 2: Introdução ao método -->
+  <section class="slide slide-opener theme-opener">
+    <span class="corner-mark tl">00 · Antes de começar</span>
+    <div class="slide-inner">
+      <span class="numeral anim-1">§</span>
+      <p class="eyebrow anim-2">O método</p>
+      <h2 class="anim-3">Cada história, três perguntas.</h2>
+      <p class="opener-text anim-4">
+        Para cada passagem vamos olhar <em class="accent">o que aconteceu antes</em>, <em class="accent">o que aconteceu no momento</em> e <em class="accent">quais foram as consequências</em>. Em seguida, o convite: se <strong>você</strong> estivesse ali, no lugar do personagem — com o mesmo medo, a mesma pressa, a mesma demora de Deus — o que teria feito?
+      </p>
+    </div>
+  </section>
+
+  <!-- ATO I — MOISÉS -->
+  <section class="slide slide-opener theme-opener">
+    <span class="corner-mark tl">Ato I · de 03</span>
+    <div class="slide-inner">
+      <span class="numeral anim-1">I.</span>
+      <p class="eyebrow anim-2">Ato primeiro</p>
+      <h2 class="anim-3">Moisés</h2>
+      <p class="opener-text anim-4">
+        O pastor que virou libertador. Encontrou Deus numa sarça, mas também escalou um monte e desceu para um povo impaciente. Quatro quadros: o chamado, o mar, o bezerro, a terra que não foi pisada.
+      </p>
+    </div>
+  </section>
+
+  <!-- SLIDE: Moisés - Sarça ardente -->
+  <section class="slide">
+    <span class="corner-mark tl">I.1 · O chamado</span>
+    <div class="slide-inner">
+      <div class="story-grid">
+        <div class="story-left">
+          <p class="character anim-1">Moisés</p>
+          <span class="verse-ref anim-2">Êxodo 3:1-6</span>
+          <h2 class="anim-3">A sarça que ardia<br>sem se consumir.</h2>
+        </div>
+        <div class="beats">
+          <div class="beat anim-4" data-step="i.">
+            <h4>Antes</h4>
+            <p>Moisés cuidava das ovelhas no deserto de Midiã — fugitivo do Egito, 40 anos de rotina quieta — quando avistou uma sarça em chamas que não queimava.</p>
+          </div>
+          <div class="beat anim-5" data-step="ii.">
+            <h4>Depois</h4>
+            <p>Deus o chamou pelo nome e o enviou para libertar Israel. Moisés cobriu o rosto e tirou as sandálias.</p>
+          </div>
+          <div class="beat anim-6" data-step="iii.">
+            <h4>Consequências</h4>
+            <p>Ali recebeu sua missão de vida. Tirar as sandálias foi reverência — o chão era santo porque Deus estava nele.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: Moisés - reflexão sarça -->
+  <section class="slide slide-reflect theme-dark">
+    <span class="corner-mark tl">I.1 · Reflexão</span>
+    <div class="bg-quote">&ldquo;</div>
+    <div class="slide-inner">
+      <p class="eyebrow anim-1" style="color: var(--gold-light);">E se fosse você?</p>
+      <h2 class="anim-2">Deus te chama<br>para uma missão<br><span class="emphasis">que você não pediu.</span></h2>
+      <div class="questions">
+        <p class="anim-3">Você teria tirado as sandálias — ou argumentado que havia gente mais qualificada?</p>
+        <p class="anim-4">O que, hoje, é a sua sarça ardendo do lado do caminho que você tem passado batido?</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: Moisés - Mar Vermelho -->
+  <section class="slide">
+    <span class="corner-mark tl">I.2 · O mar</span>
+    <div class="slide-inner">
+      <div class="story-grid">
+        <div class="story-left">
+          <p class="character anim-1">Moisés</p>
+          <span class="verse-ref anim-2">Êxodo 14:21-31</span>
+          <h2 class="anim-3">Entre o faraó<br>e o abismo de água.</h2>
+        </div>
+        <div class="beats">
+          <div class="beat anim-4" data-step="i.">
+            <h4>Antes</h4>
+            <p>Israel saiu do Egito e ficou encurralado: o mar à frente, o exército do faraó às costas. Pânico. Por ordem de Deus, Moisés estendeu a mão.</p>
+          </div>
+          <div class="beat anim-5" data-step="ii.">
+            <h4>Depois</h4>
+            <p>O mar se abriu. O povo atravessou em terra seca. O exército egípcio tentou seguir pelo mesmo caminho.</p>
+          </div>
+          <div class="beat anim-6" data-step="iii.">
+            <h4>Consequências</h4>
+            <p>Os egípcios morreram no mar; Israel viu o poder de Deus e creu no Senhor — e em Moisés como seu enviado.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: Reflexão mar -->
+  <section class="slide slide-reflect theme-dark">
+    <span class="corner-mark tl">I.2 · Reflexão</span>
+    <div class="bg-quote">&ldquo;</div>
+    <div class="slide-inner">
+      <p class="eyebrow anim-1" style="color: var(--gold-light);">E se fosse você?</p>
+      <h2 class="anim-2">Sem saída aparente,<br>com um povo inteiro<br><span class="emphasis">olhando pra você.</span></h2>
+      <div class="questions">
+        <p class="anim-3">Você estenderia a mão sobre o mar — ou ficaria procurando um plano B mais razoável?</p>
+        <p class="anim-4">Que "Mar Vermelho" está na sua frente agora, esperando uma obediência antes do milagre?</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: Bezerro de ouro -->
+  <section class="slide">
+    <span class="corner-mark tl">I.3 · O bezerro</span>
+    <div class="slide-inner">
+      <div class="story-grid">
+        <div class="story-left">
+          <p class="character anim-1">Moisés</p>
+          <span class="verse-ref anim-2">Êxodo 32:1-35</span>
+          <h2 class="anim-3">O líder demora.<br>O povo improvisa um deus.</h2>
+        </div>
+        <div class="beats">
+          <div class="beat anim-4" data-step="i.">
+            <h4>Antes</h4>
+            <p>Moisés estava no Sinai recebendo as tábuas. O povo se cansou de esperar — quarenta dias pareceram uma vida inteira.</p>
+          </div>
+          <div class="beat anim-5" data-step="ii.">
+            <h4>Depois</h4>
+            <p>Arão cedeu, fundiu o ouro, moldou um bezerro. O povo adorou. Moisés desceu, viu a festa, quebrou as tábuas e destruiu o ídolo.</p>
+          </div>
+          <div class="beat anim-6" data-step="iii.">
+            <h4>Consequências</h4>
+            <p>Cerca de 3.000 homens morreram naquele dia. Houve juízo severo sobre o povo por idolatria.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: Reflexão bezerro -->
+  <section class="slide slide-reflect theme-dark">
+    <span class="corner-mark tl">I.3 · Reflexão</span>
+    <div class="bg-quote">&ldquo;</div>
+    <div class="slide-inner">
+      <p class="eyebrow anim-1" style="color: var(--gold-light);">E se fosse você?</p>
+      <h2 class="anim-2">Deus parece demorar.<br>Todo mundo quer<br><span class="emphasis">uma resposta agora.</span></h2>
+      <div class="questions">
+        <p class="anim-3">Você seria o Arão — o que cede pra não criar conflito — ou teria segurado a espera?</p>
+        <p class="anim-4">Quais "bezerros de ouro" a gente funde quando Deus parece atrasado?</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: Terra prometida -->
+  <section class="slide">
+    <span class="corner-mark tl">I.4 · A terra que não foi</span>
+    <div class="slide-inner">
+      <div class="story-grid">
+        <div class="story-left">
+          <p class="character anim-1">Moisés</p>
+          <span class="verse-ref anim-2">Números 14:1-35</span>
+          <h2 class="anim-3">A uma fronteira<br>da promessa.</h2>
+        </div>
+        <div class="beats">
+          <div class="beat anim-4" data-step="i.">
+            <h4>Antes</h4>
+            <p>Os doze espias voltaram de Canaã. Dez trouxeram um relatório de medo — gigantes, muralhas. O povo começou a murmurar.</p>
+          </div>
+          <div class="beat anim-5" data-step="ii.">
+            <h4>Depois</h4>
+            <p>O povo recusou confiar em Deus e quis voltar ao Egito. Só Josué e Calebe levantaram a voz a favor de avançar.</p>
+          </div>
+          <div class="beat anim-6" data-step="iii.">
+            <h4>Consequências</h4>
+            <p>Aquela geração ficou 40 anos no deserto e não entrou na terra. Só Josué e Calebe pisaram em Canaã.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: Reflexão terra prometida -->
+  <section class="slide slide-reflect theme-dark">
+    <span class="corner-mark tl">I.4 · Reflexão</span>
+    <div class="bg-quote">&ldquo;</div>
+    <div class="slide-inner">
+      <p class="eyebrow anim-1" style="color: var(--gold-light);">E se fosse você?</p>
+      <h2 class="anim-2">A promessa está ali.<br>Mas tem gigantes<br><span class="emphasis">no caminho.</span></h2>
+      <div class="questions">
+        <p class="anim-3">Você teria sido da maioria que viu gigantes, ou dos dois que viram Deus maior que eles?</p>
+        <p class="anim-4">Que promessas você já <em>quase</em> tocou — e recuou no último passo?</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATO II — NOÉ -->
+  <section class="slide slide-opener theme-opener">
+    <span class="corner-mark tl">Ato II · de 03</span>
+    <div class="slide-inner">
+      <span class="numeral anim-1">II.</span>
+      <p class="eyebrow anim-2">Ato segundo</p>
+      <h2 class="anim-3">Noé</h2>
+      <p class="opener-text anim-4">
+        O homem que ouviu o impossível e, mesmo assim, começou a martelar. Três quadros: o chamado absurdo, a obediência contra todos, e o homem já salvo que ainda tropeça.
+      </p>
+    </div>
+  </section>
+
+  <!-- SLIDE: Noé - Deus fala -->
+  <section class="slide">
+    <span class="corner-mark tl">II.1 · O chamado</span>
+    <div class="slide-inner">
+      <div class="story-grid">
+        <div class="story-left">
+          <p class="character anim-1">Noé</p>
+          <span class="verse-ref anim-2">Gênesis 6:13-22; 7:1-5</span>
+          <h2 class="anim-3">"Constrói uma arca<br>para uma chuva<br>que ninguém viu."</h2>
+        </div>
+        <div class="beats">
+          <div class="beat anim-4" data-step="i.">
+            <h4>Antes</h4>
+            <p>A terra estava corrompida e cheia de violência. Em meio àquilo, Noé achou graça diante de Deus — um homem justo na sua geração.</p>
+          </div>
+          <div class="beat anim-5" data-step="ii.">
+            <h4>Depois</h4>
+            <p>Deus explicou o dilúvio, deu as medidas da arca, mandou construir. Noé obedeceu — sem protocolo, sem modelo anterior.</p>
+          </div>
+          <div class="beat anim-6" data-step="iii.">
+            <h4>Consequências</h4>
+            <p>Noé e sua família foram preservados. Ele se tornou exemplo eterno de obediência em meio ao caos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: Reflexão Noé chamado -->
+  <section class="slide slide-reflect theme-dark">
+    <span class="corner-mark tl">II.1 · Reflexão</span>
+    <div class="bg-quote">&ldquo;</div>
+    <div class="slide-inner">
+      <p class="eyebrow anim-1" style="color: var(--gold-light);">E se fosse você?</p>
+      <h2 class="anim-2">Deus pede algo<br>que ninguém<br><span class="emphasis">vai entender.</span></h2>
+      <div class="questions">
+        <p class="anim-3">Você começaria a obra — ou esperaria a primeira nuvem pra ter certeza?</p>
+        <p class="anim-4">Qual é a "arca" que Deus já te mandou começar, mas você ainda está esperando mais sinais?</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: Noé desafios -->
+  <section class="slide">
+    <span class="corner-mark tl">II.2 · Os desafios</span>
+    <div class="slide-inner">
+      <div class="story-grid">
+        <div class="story-left">
+          <p class="character anim-1">Noé</p>
+          <span class="verse-ref anim-2">Gênesis 6:9-22; 7:1-24</span>
+          <h2 class="anim-3">Décadas de obra<br>em meio ao deboche.</h2>
+        </div>
+        <div class="beats">
+          <div class="beat anim-4" data-step="i.">
+            <h4>Antes</h4>
+            <p>Noé vivia numa geração corrompida e recebeu uma tarefa enorme: construir algo que ninguém entendia, por muito tempo, sem sinal de chuva.</p>
+          </div>
+          <div class="beat anim-5" data-step="ii.">
+            <h4>Depois</h4>
+            <p>Construiu a arca, enfrentou a incredulidade à sua volta, e no fim entrou nela com sua família — portas fechadas por Deus.</p>
+          </div>
+          <div class="beat anim-6" data-step="iii.">
+            <h4>Consequências</h4>
+            <p>O dilúvio veio. Deus preservou a casa de Noé. Depois das águas, selou uma nova aliança com a humanidade.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: Reflexão Noé desafios -->
+  <section class="slide slide-reflect theme-dark">
+    <span class="corner-mark tl">II.2 · Reflexão</span>
+    <div class="bg-quote">&ldquo;</div>
+    <div class="slide-inner">
+      <p class="eyebrow anim-1" style="color: var(--gold-light);">E se fosse você?</p>
+      <h2 class="anim-2">Anos de trabalho.<br>Zero validação.<br><span class="emphasis">Zero resultado visível.</span></h2>
+      <div class="questions">
+        <p class="anim-3">Você teria persistido pela 30ª vez que alguém passasse e zombasse da obra?</p>
+        <p class="anim-4">Onde, hoje, você precisa obedecer antes de entender — ou antes de ver fruto?</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: Noé vinho -->
+  <section class="slide">
+    <span class="corner-mark tl">II.3 · Depois da vitória</span>
+    <div class="slide-inner">
+      <div class="story-grid">
+        <div class="story-left">
+          <p class="character anim-1">Noé</p>
+          <span class="verse-ref anim-2">Gênesis 9:20-27</span>
+          <h2 class="anim-3">Salvo do dilúvio,<br>tropeçando na paz.</h2>
+        </div>
+        <div class="beats">
+          <div class="beat anim-4" data-step="i.">
+            <h4>Antes</h4>
+            <p>O dilúvio já tinha passado. Noé voltou a cultivar a terra — vida recomeçando, rotina reinstalada.</p>
+          </div>
+          <div class="beat anim-5" data-step="ii.">
+            <h4>Depois</h4>
+            <p>Plantou uma vinha, bebeu do vinho e se embriagou. Cam viu a nudez do pai; Sem e Jafé o cobriram de costas, com respeito.</p>
+          </div>
+          <div class="beat anim-6" data-step="iii.">
+            <h4>Consequências</h4>
+            <p>Houve maldição sobre Canaã (filho de Cam) e bênção sobre Sem e Jafé. O episódio expõe a fragilidade humana mesmo depois do milagre.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: Reflexão Noé vinho -->
+  <section class="slide slide-reflect theme-dark">
+    <span class="corner-mark tl">II.3 · Reflexão</span>
+    <div class="bg-quote">&ldquo;</div>
+    <div class="slide-inner">
+      <p class="eyebrow anim-1" style="color: var(--gold-light);">E se fosse você?</p>
+      <h2 class="anim-2">Depois da travessia,<br>o perigo muda<br><span class="emphasis">de endereço.</span></h2>
+      <div class="questions">
+        <p class="anim-3">Você teria sido Cam (expondo) ou Sem e Jafé (cobrindo) ao ver a fraqueza de alguém?</p>
+        <p class="anim-4">Em que áreas o seu maior risco não é a tempestade — é a paz depois dela?</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATO III — LÓ -->
+  <section class="slide slide-opener theme-opener">
+    <span class="corner-mark tl">Ato III · de 03</span>
+    <div class="slide-inner">
+      <span class="numeral anim-1">III.</span>
+      <p class="eyebrow anim-2">Ato terceiro</p>
+      <h2 class="anim-3">Ló</h2>
+      <p class="opener-text anim-4">
+        O homem que escolheu o verde — e perdeu o chão. Dois quadros: a fuga de uma cidade condenada, e o que as ruínas fizeram com quem sobrou.
+      </p>
+    </div>
+  </section>
+
+  <!-- SLIDE: Ló Sodoma -->
+  <section class="slide">
+    <span class="corner-mark tl">III.1 · A fuga</span>
+    <div class="slide-inner">
+      <div class="story-grid">
+        <div class="story-left">
+          <p class="character anim-1">Ló</p>
+          <span class="verse-ref anim-2">Gênesis 19:1-29</span>
+          <h2 class="anim-3">Saia agora.<br>E não olhe<br>para trás.</h2>
+        </div>
+        <div class="beats">
+          <div class="beat anim-4" data-step="i.">
+            <h4>Antes</h4>
+            <p>Sodoma estava sob juízo iminente. Os anjos chegaram à cidade e Ló os recebeu, hospedou, protegeu.</p>
+          </div>
+          <div class="beat anim-5" data-step="ii.">
+            <h4>Depois</h4>
+            <p>Ló saiu com a família pela manhã, arrastado pela misericórdia. Mas a esposa olhou para trás — e virou estátua de sal.</p>
+          </div>
+          <div class="beat anim-6" data-step="iii.">
+            <h4>Consequências</h4>
+            <p>Sodoma e Gomorra foram destruídas por fogo e enxofre. Ló foi salvo — mas chegou do outro lado com menos gente do que saiu.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: Reflexão Ló Sodoma -->
+  <section class="slide slide-reflect theme-dark">
+    <span class="corner-mark tl">III.1 · Reflexão</span>
+    <div class="bg-quote">&ldquo;</div>
+    <div class="slide-inner">
+      <p class="eyebrow anim-1" style="color: var(--gold-light);">E se fosse você?</p>
+      <h2 class="anim-2">Sair é obedecer.<br>Olhar para trás<br><span class="emphasis">é ainda querer ficar.</span></h2>
+      <div class="questions">
+        <p class="anim-3">Você teria saído na hora, ou ficaria negociando mais um dia de "arrumar as coisas"?</p>
+        <p class="anim-4">Para que "Sodoma" o seu coração ainda olha com saudade, mesmo depois de Deus ter te tirado dela?</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: Ló caverna -->
+  <section class="slide">
+    <span class="corner-mark tl">III.2 · O isolamento</span>
+    <div class="slide-inner">
+      <div class="story-grid">
+        <div class="story-left">
+          <p class="character anim-1">Ló</p>
+          <span class="verse-ref anim-2">Gênesis 19:30-38</span>
+          <h2 class="anim-3">O que o trauma<br>e o isolamento<br>fabricam.</h2>
+        </div>
+        <div class="beats">
+          <div class="beat anim-4" data-step="i.">
+            <h4>Antes</h4>
+            <p>Ló e as filhas viviam isolados numa caverna, fugidos, traumatizados, depois da destruição de Sodoma.</p>
+          </div>
+          <div class="beat anim-5" data-step="ii.">
+            <h4>Depois</h4>
+            <p>As filhas embebedaram o pai em duas noites seguidas e tiveram relações com ele, convencidas de que não havia mais homens na terra.</p>
+          </div>
+          <div class="beat anim-6" data-step="iii.">
+            <h4>Consequências</h4>
+            <p>Nasceram Moabe e Ben-Ami — pais dos moabitas e amonitas, povos que confrontariam Israel por séculos. A família ficou marcada por desordem moral.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: Reflexão Ló caverna -->
+  <section class="slide slide-reflect theme-dark">
+    <span class="corner-mark tl">III.2 · Reflexão</span>
+    <div class="bg-quote">&ldquo;</div>
+    <div class="slide-inner">
+      <p class="eyebrow anim-1" style="color: var(--gold-light);">E se fosse você?</p>
+      <h2 class="anim-2">Sobreviver<br>não é a mesma coisa<br><span class="emphasis">que ser curado.</span></h2>
+      <div class="questions">
+        <p class="anim-3">O que o isolamento, o medo e o vinho fabricam em quem não processa o que viveu?</p>
+        <p class="anim-4">Quem você tem deixado entrar na sua caverna — ou está só com Deus e com pessoas que bebem junto?</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SÍNTESE -->
+  <section class="slide slide-consequence theme-deep">
+    <span class="corner-mark tl">Síntese · Consequências</span>
+    <div class="slide-inner">
+      <p class="eyebrow anim-1">O fio comum</p>
+      <div class="consequence-grid">
+        <div class="consequence-label anim-2">Cada<br>escolha<br>ecoa.</div>
+        <p class="consequence-text anim-3">
+          Moisés obedece — um mar se abre e um povo crê. O povo duvida — uma geração inteira morre no deserto. Noé martela na incredulidade — uma família sobrevive ao fim do mundo. Noé bebe do próprio vinho — e uma maldição atravessa séculos. Ló hesita — e perde a esposa. Ló se isola — e a casa fabrica a própria ruína.
+          <br><br>
+          <em class="accent">Em cada passagem, a obediência (ou a sua ausência) escreve os próximos capítulos de gente que nem nasceu.</em>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENCERRAMENTO -->
+  <section class="slide slide-closing theme-dark">
+    <span class="corner-mark tl">Encerramento</span>
+    <div class="slide-inner inner">
+      <p class="eyebrow anim-1" style="color: var(--gold-light); justify-content: center;">Última pergunta</p>
+      <h2 class="anim-2">E se fosse você —<br><strong>hoje?</strong></h2>
+      <div class="ornament anim-3">· · ·</div>
+      <p class="body-text anim-4" style="color: rgba(244,236,220,0.85); max-width: 45ch;">
+        Qual destas histórias bateu mais forte? Qual tem mais a ver com a semana que você está vivendo agora — a sarça, o mar, a demora, os gigantes, a arca, a vinha, a fuga ou a caverna?
+      </p>
+      <p class="signature anim-5">Fim · Obrigado</p>
+    </div>
+  </section>
+
+</div>
+
+<!-- Navigation -->
+<div class="progress-dots" id="dots"></div>
+
+<nav class="nav">
+  <button id="prev" aria-label="Anterior">← Anterior</button>
+  <span class="counter" id="counter">01 / 00</span>
+  <button id="next" aria-label="Próximo">Próximo →</button>
+</nav>
+
+<div class="keyhint">← → · espaço · início/fim</div>
+
+<!-- Scripts -->
+<script src="../assets/js/slides.js"></script>
+
+</body>
+</html>
