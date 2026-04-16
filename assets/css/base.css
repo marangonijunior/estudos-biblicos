@@ -213,7 +213,7 @@ em.accent {
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
-  display: flex;
+  display: none;
   align-items: center;
   gap: var(--space-sm);
   padding: var(--space-xs) var(--space-sm);
@@ -344,6 +344,10 @@ em.accent {
     left: auto;
     right: var(--space-md);
     transform: none;
+  }
+
+  .nav {
+    display: flex;
   }
 }
 
