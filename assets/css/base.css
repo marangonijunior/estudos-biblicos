@@ -22,15 +22,25 @@
   --body: 'Cormorant Garamond', serif;
   --mono: 'JetBrains Mono', monospace;
   
-  /* Spacing */
+  /* Mobile Spacing - Compact */
   --space-xs: 0.5rem;
-  --space-sm: 1rem;
-  --space-md: 1.5rem;
-  --space-lg: 2rem;
-  --space-xl: 3rem;
-  --space-2xl: 4rem;
-  --space-3xl: 6rem;
-  
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.25rem;
+  --space-xl: 1.5rem;
+  --space-2xl: 2rem;
+  --space-3xl: 2.5rem;
+
+  /* Typography Sizes */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+
   /* Animations */
   --ease-out: cubic-bezier(.2,.7,.2,1);
   --duration-fast: 0.2s;
@@ -77,24 +87,24 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em; 
 }
 
-h1 { font-size: clamp(3.5rem, 9vw, 8rem); }
-h2 { font-size: clamp(2.2rem, 5vw, 4rem); }
-h3 { font-size: clamp(1.5rem, 2.5vw, 2.2rem); font-weight: 500; }
-h4 { font-size: clamp(1.25rem, 2vw, 1.8rem); font-weight: 500; }
-h5 { font-size: clamp(1.1rem, 1.5vw, 1.4rem); font-weight: 600; }
-h6 { font-size: 1rem; font-weight: 600; }
+h1 { font-size: var(--text-4xl); }
+h2 { font-size: var(--text-3xl); }
+h3 { font-size: var(--text-2xl); font-weight: 500; }
+h4 { font-size: var(--text-xl); font-weight: 500; }
+h5 { font-size: var(--text-lg); font-weight: 600; }
+h6 { font-size: var(--text-base); font-weight: 600; }
 
-.lede { 
-  font-size: clamp(1.2rem, 1.8vw, 1.6rem); 
-  line-height: 1.5; 
-  max-width: 50ch; 
-  color: #3a332c; 
+.lede {
+  font-size: var(--text-lg);
+  line-height: 1.5;
+  max-width: 50ch;
+  color: #3a332c;
 }
 
-.body-text { 
-  font-size: clamp(1.05rem, 1.4vw, 1.3rem); 
-  line-height: 1.6; 
-  color: #3a332c; 
+.body-text {
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: #3a332c;
 }
 
 em.accent { 
@@ -152,7 +162,8 @@ em.accent {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--space-2xl) var(--space-3xl);
+  padding: var(--space-lg) var(--space-md);
+  font-size: var(--text-sm);
   opacity: 0;
   visibility: hidden;
   transform: translateY(20px);
@@ -204,8 +215,8 @@ em.accent {
   z-index: 1000;
   display: flex;
   align-items: center;
-  gap: 1.2rem;
-  padding: 0.6rem 1.2rem;
+  gap: var(--space-sm);
+  padding: var(--space-xs) var(--space-sm);
   background: rgba(26, 21, 18, 0.85);
   backdrop-filter: blur(10px);
   border-radius: 100px;
@@ -217,9 +228,11 @@ em.accent {
   border: none;
   color: var(--parchment);
   font-family: var(--mono);
-  font-size: 0.75rem;
+  font-size: var(--text-xs);
   cursor: pointer;
-  padding: 0.4rem 0.8rem;
+  padding: 0.75rem 1rem;
+  min-height: 44px;
+  min-width: 44px;
   letter-spacing: 0.1em;
   transition: color var(--duration-fast);
   text-transform: uppercase;
@@ -241,8 +254,11 @@ em.accent {
 /* ===== Progress Dots ===== */
 .progress-dots {
   position: fixed;
-  top: var(--space-md);
-  right: var(--space-md);
+  top: auto;
+  bottom: 5rem;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
   z-index: 1000;
   display: flex;
   gap: 6px;
@@ -285,21 +301,83 @@ em.accent {
   to { opacity: 1; } 
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 900px) {
-  .slide { 
-    padding: var(--space-xl) var(--space-lg); 
+/* ===== Mobile-First Responsive ===== */
+
+/* Mobile base styles já definidos acima */
+
+/* Tablet: 768px+ */
+@media (min-width: 768px) {
+  :root {
+    --space-xs: 0.75rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 2.5rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+
+    --text-base: 1.125rem;
+    --text-lg: 1.25rem;
+    --text-xl: 1.5rem;
+    --text-2xl: 2rem;
+    --text-3xl: 2.5rem;
+    --text-4xl: 3.5rem;
   }
-  
-  .container {
-    padding: 0 var(--space-md);
+
+  .slide {
+    padding: var(--space-xl) var(--space-lg);
+    font-size: var(--text-base);
   }
-  
-  .progress-dots { 
-    top: auto; 
-    bottom: 5rem; 
-    right: 50%; 
-    transform: translateX(50%); 
+
+  .slide h1 { font-size: var(--text-3xl); }
+  .slide h2 { font-size: var(--text-2xl); }
+
+  .studies-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--space-xl);
+    padding: var(--space-2xl) var(--space-lg);
+  }
+
+  .progress-dots {
+    top: var(--space-md);
+    bottom: auto;
+    left: auto;
+    right: var(--space-md);
+    transform: none;
+  }
+}
+
+/* Desktop: 1200px+ */
+@media (min-width: 1200px) {
+  :root {
+    --space-xs: 1rem;
+    --space-sm: 1.25rem;
+    --space-md: 2rem;
+    --space-lg: 2.5rem;
+    --space-xl: 3rem;
+    --space-2xl: 4rem;
+    --space-3xl: 6rem;
+
+    --text-base: 1.25rem;
+    --text-lg: 1.5rem;
+    --text-xl: 1.875rem;
+    --text-2xl: 2.5rem;
+    --text-3xl: 3.5rem;
+    --text-4xl: 5rem;
+  }
+
+  .slide {
+    padding: var(--space-2xl) var(--space-xl);
+    font-size: var(--text-lg);
+  }
+
+  .slide h1 { font-size: var(--text-4xl); }
+  .slide h2 { font-size: var(--text-3xl); }
+
+  .studies-grid {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: var(--space-2xl);
+    padding: var(--space-3xl) var(--space-xl);
   }
 }
 
@@ -320,16 +398,19 @@ em.accent {
   font-family: var(--display);
   font-style: italic;
   font-weight: 300;
-  font-size: clamp(15rem, 30vw, 35rem);
+  font-size: clamp(6rem, 30vw, 35rem);
   color: var(--parchment);
   opacity: 0.04;
-  top: 50%; 
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
   line-height: 0.8;
   letter-spacing: -0.05em;
   user-select: none;
+  max-width: 100vw;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .studies-grid {
