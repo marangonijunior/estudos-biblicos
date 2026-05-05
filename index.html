@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Estudos Bíblicos</title>
-<meta name="description" content="Coleção de estudos bíblicos interativos e reflexões sobre as Escrituras.">
+<title>Biblical Studies</title>
+<meta name="description" content="A collection of interactive biblical studies and sermon series — reflections on the Scriptures.">
 
 <!-- Open Graph / Social Media -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Estudos Bíblicos">
-<meta property="og:description" content="Coleção de estudos bíblicos interativos e reflexões sobre as Escrituras.">
+<meta property="og:title" content="Biblical Studies">
+<meta property="og:description" content="A collection of interactive biblical studies and sermon series — reflections on the Scriptures.">
 <meta property="og:url" content="https://marangonijunior.github.io/estudos-biblicos/">
 
 <!-- Styles -->
@@ -20,13 +20,13 @@
     overflow-x: hidden;
     background: var(--parchment);
   }
-  
+
   .menu-content {
     position: relative;
     z-index: 2;
     text-align: center;
   }
-  
+
   .main-title {
     font-size: clamp(4rem, 12vw, 10rem);
     font-weight: 300;
@@ -34,7 +34,7 @@
     margin-bottom: var(--space-md);
     line-height: 0.9;
   }
-  
+
   .main-title .emphasis {
     display: block;
     font-weight: 800;
@@ -42,7 +42,7 @@
     color: var(--gold-light);
     margin-top: 0.5rem;
   }
-  
+
   .hero-subtitle {
     font-size: clamp(1.2rem, 2vw, 1.6rem);
     line-height: 1.5;
@@ -51,7 +51,7 @@
     opacity: 0.85;
     font-style: italic;
   }
-  
+
   .hero-meta {
     font-family: var(--mono);
     font-size: 0.85rem;
@@ -60,13 +60,17 @@
     color: var(--gold-light);
     opacity: 0.8;
   }
-  
+
   .studies-section {
     background: var(--parchment);
     position: relative;
     z-index: 1;
   }
-  
+
+  .studies-section.alt {
+    background: var(--parchment-deep);
+  }
+
   .studies-section::before {
     content: '';
     position: absolute;
@@ -77,18 +81,18 @@
     background: linear-gradient(to bottom, transparent, var(--parchment));
     pointer-events: none;
   }
-  
+
   .section-header {
     text-align: center;
     margin-bottom: var(--space-2xl);
   }
-  
+
   .section-header h2 {
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 600;
     margin-bottom: var(--space-sm);
   }
-  
+
   .section-subtitle {
     color: #3a332c;
     max-width: 60ch;
@@ -96,7 +100,7 @@
     font-size: 1.2rem;
     line-height: 1.6;
   }
-  
+
   /* Enhanced study cards */
   .study-card .study-meta::before {
     content: '§';
@@ -105,15 +109,15 @@
     font-style: italic;
     font-size: 1.2em;
   }
-  
+
   .coming-soon {
     opacity: 0.6;
     cursor: not-allowed;
     pointer-events: none;
   }
-  
+
   .coming-soon::after {
-    content: 'Em breve';
+    content: 'Coming Soon';
     position: absolute;
     top: var(--space-sm);
     right: var(--space-sm);
@@ -126,14 +130,14 @@
     padding: 0.3rem 0.6rem;
     border-radius: 100px;
   }
-  
+
   .footer {
     background: var(--ink);
     color: var(--parchment);
     text-align: center;
     padding: var(--space-2xl) 0;
   }
-  
+
   .footer-content {
     opacity: 0.6;
     font-family: var(--mono);
@@ -141,35 +145,35 @@
     letter-spacing: 0.2em;
     text-transform: uppercase;
   }
-  
+
   .footer-content a {
     color: var(--gold-light);
     text-decoration: none;
     transition: color var(--duration-fast);
   }
-  
+
   .footer-content a:hover {
     color: var(--parchment);
   }
-  
+
   /* Scroll animations */
   .fade-up {
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
   }
-  
+
   .fade-up.visible {
     opacity: 1;
     transform: translateY(0);
   }
-  
+
   @media (max-width: 768px) {
     .studies-grid {
       grid-template-columns: 1fr;
       gap: var(--space-lg);
     }
-    
+
     .menu-hero {
       padding: var(--space-xl) 0;
     }
@@ -181,96 +185,114 @@
 
 <!-- Hero Section -->
 <section class="menu-hero">
-  <span class="corner-mark tl">Estudos Bíblicos · Coleção</span>
-  <span class="corner-mark br">Versão 1.0 · 2026</span>
-  
-  <div class="bg-word fade-in">Bíblia</div>
-  
+  <span class="corner-mark tl">Sermons · Collection</span>
+  <span class="corner-mark br">2026</span>
+
+  <div class="bg-word fade-in">Word</div>
+
   <div class="menu-content container">
-    <p class="eyebrow" style="color: var(--gold-light); justify-content: center;">Reflexões das Escrituras</p>
-    
+    <p class="eyebrow" style="color: var(--gold-light); justify-content: center;">Online sermon collection</p>
+
     <h1 class="main-title">
-      Estudos
-      <span class="emphasis">Bíblicos</span>
+      Sermon
+      <span class="emphasis">Series</span>
     </h1>
-    
+
     <p class="hero-subtitle">
-      Uma coleção de estudos interativos que nos convidam a mergulhar nas histórias, personagens e lições das Sagradas Escrituras.
+      A collection of online sermons that walk through the characters, stories, and lessons of Scripture — one series at a time.
     </p>
-    
-    <p class="hero-meta">Explore · Reflita · Aplique</p>
+
+    <p class="hero-meta">Hear · Reflect · Live</p>
   </div>
 </section>
 
-<!-- Studies Section -->
+<!-- Sermon Series Section -->
 <section class="studies-section section-padding">
   <div class="container">
     <div class="section-header fade-up">
-      <p class="eyebrow">Estudos Disponíveis</p>
-      <h2>Jornada pelas Escrituras</h2>
+      <p class="eyebrow">Sermon Series</p>
+      <h2>A Journey Through the Scriptures</h2>
       <p class="section-subtitle">
-        Cada estudo foi pensado para ser uma experiência imersiva — não apenas leitura, mas reflexão profunda sobre como as verdades bíblicas se aplicam à nossa vida hoje.
+        Each series walks through biblical characters and themes one sermon at a time — designed as immersive, slide-based presentations for sustained study and reflection.
       </p>
     </div>
-    
+
     <div class="studies-grid">
-      
-      <!-- Estudo 1: E se fosse você? -->
-      <a href="estudos/e-se-fosse-voce.html" class="study-card fade-up">
-        <div class="study-meta">Personagens Bíblicos · 25 slides · 3 atos</div>
-        <h3>E se fosse você?</h3>
+
+      <!-- Five Crossings (live) -->
+      <a href="series/five-crossings.html" class="study-card fade-up">
+        <div class="study-meta">5-Part Series · Moses</div>
+        <h3>Five Crossings</h3>
         <p class="study-description">
-          Nove momentos decisivos na vida de Moisés, Noé e Ló. A pergunta que não sai da cabeça: se você estivesse no lugar deles, com os mesmos medos e pressões, o que teria feito?
+          Bush, sea, mountain, calf, giants — five thresholds Moses had to cross, and the question each one still asks of us. A journey through Moses' decisive moments as a mirror of our own spiritual life.
         </p>
-        <span class="study-cta">Começar Estudo →</span>
+        <span class="study-cta">Explore Series →</span>
       </a>
-      
-      <!-- Estudos futuros (placeholder) -->
+
+      <!-- Coming-soon series -->
       <div class="study-card coming-soon fade-up">
-        <div class="study-meta">Sermão do Monte · Em breve</div>
-        <h3>Bem-aventurados</h3>
+        <div class="study-meta">6-Part Series · David</div>
+        <h3>David's Heart</h3>
         <p class="study-description">
-          Uma jornada pelas bem-aventuranças de Jesus — oito declarações que redefinem completamente o que significa viver uma vida abençoada.
+          From shepherd boy to king. Discover what it means to be a person "after God's own heart" in today's world — leadership, failure, repentance, and worship.
         </p>
-        <span class="study-cta">Em desenvolvimento</span>
+        <span class="study-cta">In development</span>
       </div>
-      
+
       <div class="study-card coming-soon fade-up">
-        <div class="study-meta">Parábolas · Em breve</div>
-        <h3>Histórias que Transformam</h3>
+        <div class="study-meta">8-Part Series · Paul</div>
+        <h3>Paul's Letters</h3>
         <p class="study-description">
-          As parábolas de Jesus não eram apenas ilustrações — eram bombas-relógio espirituais que explodiam paradigmas e mudavam corações para sempre.
+          Journey through Paul's most impactful letters. Understand grace, faith, and Christian living through the apostle's profound teachings.
         </p>
-        <span class="study-cta">Em desenvolvimento</span>
+        <span class="study-cta">In development</span>
       </div>
-      
+
       <div class="study-card coming-soon fade-up">
-        <div class="study-meta">Mulheres na Bíblia · Em breve</div>
-        <h3>Elas Mudaram a História</h3>
+        <div class="study-meta">8-Part Series · Sermon on the Mount</div>
+        <h3>Blessed Are</h3>
         <p class="study-description">
-          De Eva a Maria Madalena — mulheres que quebraram protocolos, desafiaram sistemas e reescreveram o rumo da história da salvação.
+          A journey through the Beatitudes of Jesus — eight declarations that completely redefine what it means to live a blessed life.
         </p>
-        <span class="study-cta">Em desenvolvimento</span>
+        <span class="study-cta">In development</span>
       </div>
-      
+
       <div class="study-card coming-soon fade-up">
-        <div class="study-meta">Salmos · Em breve</div>
-        <h3>Orações Brutas</h3>
+        <div class="study-meta">Multi-Part Series · Parables</div>
+        <h3>Stories That Transform</h3>
         <p class="study-description">
-          Os salmos não são só louvor — são gritos de desespero, pedidos de vingança, confissões brutalmente honestas. A oração como ela realmente é.
+          Jesus' parables weren't just illustrations — they were spiritual time bombs that exploded paradigms and changed hearts forever.
         </p>
-        <span class="study-cta">Em desenvolvimento</span>
+        <span class="study-cta">In development</span>
       </div>
-      
+
       <div class="study-card coming-soon fade-up">
-        <div class="study-meta">Provérbios · Em breve</div>
-        <h3>Sabedoria Prática</h3>
+        <div class="study-meta">Multi-Part Series · Women of the Bible</div>
+        <h3>They Changed History</h3>
         <p class="study-description">
-          Salomão não filosofava no abstrato — ele dava conselhos para a segunda-feira de manhã. Sabedoria que funciona na vida real.
+          From Eve to Mary Magdalene — women who broke protocols, challenged systems, and rewrote the course of salvation history.
         </p>
-        <span class="study-cta">Em desenvolvimento</span>
+        <span class="study-cta">In development</span>
       </div>
-      
+
+      <div class="study-card coming-soon fade-up">
+        <div class="study-meta">Multi-Part Series · Psalms</div>
+        <h3>Raw Prayers</h3>
+        <p class="study-description">
+          The psalms aren't only praise — they're cries of despair, requests for vengeance, brutally honest confessions. Prayer as it really is.
+        </p>
+        <span class="study-cta">In development</span>
+      </div>
+
+      <div class="study-card coming-soon fade-up">
+        <div class="study-meta">Multi-Part Series · Proverbs</div>
+        <h3>Practical Wisdom</h3>
+        <p class="study-description">
+          Solomon didn't philosophize in the abstract — he gave advice for Monday morning. Wisdom that works in real life.
+        </p>
+        <span class="study-cta">In development</span>
+      </div>
+
     </div>
   </div>
 </section>
@@ -280,11 +302,11 @@
   <div class="container">
     <div class="footer-content">
       <p>
-        Desenvolvido por <a href="https://github.com/marangonijunior" target="_blank">@marangonijunior</a> 
-        · Código disponível no <a href="https://github.com/marangonijunior/estudos-biblicos" target="_blank">GitHub</a>
+        Built by <a href="https://github.com/marangonijunior" target="_blank">@marangonijunior</a>
+        · Source on <a href="https://github.com/marangonijunior/estudos-biblicos" target="_blank">GitHub</a>
       </p>
       <p style="margin-top: 0.5rem; opacity: 0.5;">
-        "Toda Escritura é inspirada por Deus e útil para o ensino" — 2 Timóteo 3:16
+        "All Scripture is given by inspiration of God, and is profitable for doctrine" — 2 Timothy 3:16
       </p>
     </div>
   </div>
@@ -296,7 +318,7 @@
     threshold: 0.1,
     rootMargin: '0px 0px -10% 0px'
   };
-  
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -304,7 +326,7 @@
       }
     });
   }, observerOptions);
-  
+
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
   });

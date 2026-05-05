@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Call and Our Denial — Five Crossings</title>
+<meta name="description" content="Moses' five excuses mirror our resistance to God's calling. It's not about who you are — but about Who calls you.">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Call and Our Denial — Five Crossings">
+<meta property="og:description" content="Moses' five excuses mirror our resistance to God's calling. It's not about who you are — but about Who calls you.">
+
+<!-- Base Styles -->
+<link rel="stylesheet" href="../assets/css/base.css">
+
+<!-- Specific styles for this sermon -->
+<style>
+  html, body {
+    overflow: hidden;
+    background: var(--ink);
+  }
+
+  /* ===== Slide type variations ===== */
+  .slide-title {
+    background: var(--ink);
+    color: var(--parchment);
+  }
+
+  .slide-title .bg-word {
+    position: absolute;
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(20rem, 45vw, 50rem);
+    color: var(--parchment);
+    opacity: 0.04;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    line-height: 0.8;
+    letter-spacing: -0.05em;
+    user-select: none;
+  }
+
+  .slide-title h1 {
+    position: relative;
+    z-index: 2;
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  .slide-title h1 .line2 {
+    display: block;
+    font-weight: 800;
+    font-style: normal;
+    color: var(--gold-light);
+  }
+
+  .slide-title .tagline {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-top: 2.5rem;
+    opacity: 0.8;
+  }
+
+  .slide-title .sub {
+    max-width: 42ch;
+    margin-top: 1.8rem;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    opacity: 0.75;
+    font-style: italic;
+  }
+
+  /* ===== Opener slides ===== */
+  .slide-opener .numeral {
+    font-family: var(--display);
+    font-weight: 200;
+    font-style: italic;
+    font-size: clamp(8rem, 18vw, 16rem);
+    color: var(--gold);
+    line-height: 0.9;
+    margin-bottom: -1rem;
+    display: block;
+  }
+
+  .slide-opener h2 {
+    font-weight: 600;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    margin-bottom: 2rem;
+  }
+
+  .slide-opener .opener-text {
+    max-width: 60ch;
+    font-size: 1.35rem;
+    line-height: 1.6;
+    color: #3a332c;
+    border-left: 2px solid var(--gold);
+    padding-left: 1.5rem;
+  }
+
+  /* ===== Story slides ===== */
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .story-left .verse-ref {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--ink);
+    color: var(--parchment);
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+  }
+
+  .story-left h2 {
+    margin-bottom: 2rem;
+    font-weight: 600;
+  }
+
+  .story-left .character {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin-bottom: 0.75rem;
+  }
+
+  .beats {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .beat {
+    position: relative;
+    padding-left: 2.5rem;
+  }
+
+  .beat::before {
+    content: attr(data-step);
+    position: absolute;
+    left: 0; top: 0.1rem;
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.8rem;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .beat h4 {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink);
+    opacity: 0.55;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+
+  .beat p {
+    font-size: 1.1rem;
+    line-height: 1.55;
+    color: #3a332c;
+  }
+
+  /* ===== Reflection slides ===== */
+  .slide-reflect .bg-quote {
+    position: absolute;
+    top: 2rem; left: 4rem;
+    font-family: var(--display);
+    font-size: 20rem;
+    line-height: 1;
+    color: var(--gold);
+    opacity: 0.15;
+    font-style: italic;
+    user-select: none;
+  }
+
+  .slide-reflect h2 {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--parchment);
+    position: relative;
+    z-index: 2;
+  }
+
+  .slide-reflect h2 .emphasis {
+    font-weight: 800;
+    font-style: normal;
+    color: var(--gold-light);
+  }
+
+  .slide-reflect .questions {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    max-width: 60ch;
+  }
+
+  .slide-reflect .questions p {
+    font-size: 1.35rem;
+    line-height: 1.5;
+    padding-left: 1.5rem;
+    border-left: 1px solid var(--gold);
+    opacity: 0.9;
+  }
+
+  /* ===== Truths slide (numbered list) ===== */
+  .slide-truths .truths-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 3rem;
+    margin-top: 2.5rem;
+    max-width: 900px;
+  }
+
+  .truth-item {
+    position: relative;
+    padding-left: 3rem;
+  }
+
+  .truth-item::before {
+    content: attr(data-num);
+    position: absolute;
+    left: 0; top: -0.2rem;
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 2.5rem;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .truth-item p {
+    font-size: 1.15rem;
+    line-height: 1.5;
+    color: var(--parchment);
+    opacity: 0.9;
+  }
+
+  /* ===== Closing slide ===== */
+  .slide-closing .inner {
+    max-width: 700px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .slide-closing h2 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: 2rem;
+  }
+
+  .slide-closing h2 strong {
+    display: block;
+    font-weight: 800;
+    font-style: normal;
+    color: var(--gold-light);
+    margin-top: 0.5rem;
+  }
+
+  .slide-closing .prayer {
+    font-style: italic;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    max-width: 50ch;
+    color: rgba(244, 236, 220, 0.85);
+    margin-top: 1rem;
+    border-left: 1px solid var(--gold);
+    padding-left: 1.5rem;
+    text-align: left;
+  }
+
+  .slide-closing .signature {
+    margin-top: 3rem;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    opacity: 0.5;
+  }
+
+  .ornament {
+    font-family: var(--display);
+    font-size: 3rem;
+    color: var(--gold);
+    margin: 2rem 0;
+    letter-spacing: 1rem;
+  }
+
+  /* ===== Back to series link ===== */
+  .back-link {
+    position: fixed;
+    top: 1.5rem;
+    left: 1.5rem;
+    z-index: 1000;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(244, 236, 220, 0.6);
+    text-decoration: none;
+    background: rgba(26, 21, 18, 0.6);
+    backdrop-filter: blur(6px);
+    padding: 0.5rem 0.9rem;
+    border-radius: 100px;
+    transition: color var(--duration-fast);
+  }
+
+  .back-link:hover {
+    color: var(--gold-light);
+  }
+
+  /* ===== Key hint ===== */
+  .keyhint {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 1000;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: rgba(244, 236, 220, 0.5);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    background: rgba(26, 21, 18, 0.6);
+    backdrop-filter: blur(6px);
+    padding: 0.5rem 0.8rem;
+    border-radius: 100px;
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 900px) {
+    .story-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .slide-reflect .bg-quote {
+      font-size: 10rem;
+      left: 1rem;
+      top: 0.5rem;
+    }
+
+    .slide-truths .truths-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .keyhint {
+      display: none;
+    }
+
+    .back-link {
+      top: 1rem;
+      left: 1rem;
+      font-size: 0.6rem;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<a href="../series/five-crossings.html" class="back-link">← Back to Series</a>
+
+<div class="deck" id="deck">
+
+  <!-- SLIDE 1: Cover -->
+  <section class="slide slide-title theme-dark active">
+    <span class="corner-mark tl">Sermon 1 of 5 · Five Crossings</span>
+    <span class="corner-mark br">Exodus 3:1-15</span>
+    <div class="bg-word fade-in">call</div>
+    <div class="slide-inner" style="text-align: left;">
+      <p class="eyebrow anim-1" style="color: var(--gold-light);">The first sermon</p>
+      <h1 class="anim-2">
+        The&nbsp;Call
+        <span class="line2">and&nbsp;Our&nbsp;Denial</span>
+      </h1>
+      <p class="sub anim-3">
+        Moses' five excuses mirror our resistance to God's calling. It's not about who you are — but about Who calls you.
+      </p>
+      <p class="tagline anim-4">Hear · Resist · Obey</p>
+    </div>
+  </section>
+
+  <!-- SLIDE 2: Introduction -->
+  <section class="slide slide-opener theme-opener">
+    <span class="corner-mark tl">00 · Introduction</span>
+    <div class="slide-inner">
+      <span class="numeral anim-1">§</span>
+      <p class="eyebrow anim-2">Key verse</p>
+      <h2 class="anim-3">"Who am I to go to Pharaoh?"</h2>
+      <p class="opener-text anim-4">
+        Imagine you're at your routine job when, suddenly, God shows up and asks for something that feels impossible. What's your first reaction? Moses shows us that even the greatest spiritual leaders <em class="accent">started by questioning the call</em>. — Exodus 3:11
+      </p>
+    </div>
+  </section>
+
+  <!-- ACT I — THE CONTEXT -->
+  <section class="slide slide-opener theme-opener">
+    <span class="corner-mark tl">Act I · of 03</span>
+    <div class="slide-inner">
+      <span class="numeral anim-1">I.</span>
+      <p class="eyebrow anim-2">Act one</p>
+      <h2 class="anim-3">The Context of the Call</h2>
+      <p class="opener-text anim-4">
+        A bush burning without being consumed. A name spoken in the desert. The first command isn't "go" — it's "take off your sandals." The call begins with reverence, not strategy.
+      </p>
+    </div>
+  </section>
+
+  <!-- SLIDE: The Burning Bush story -->
+  <section class="slide">
+    <span class="corner-mark tl">I.1 · The burning bush</span>
+    <div class="slide-inner">
+      <div class="story-grid">
+        <div class="story-left">
+          <p class="character anim-1">Moses</p>
+          <span class="verse-ref anim-2">Exodus 3:1-6</span>
+          <h2 class="anim-3">An interrupted routine.<br>A holy ground.</h2>
+        </div>
+        <div class="beats">
+          <div class="beat anim-4" data-step="i.">
+            <h4>The ordinary</h4>
+            <p>Moses was tending sheep. Routine work. No spiritual peak — just another day in Midian.</p>
+          </div>
+          <div class="beat anim-5" data-step="ii.">
+            <h4>The extraordinary</h4>
+            <p>A bush in flames that didn't burn up. He turned aside to look — and God spoke from the middle of it.</p>
+          </div>
+          <div class="beat anim-6" data-step="iii.">
+            <h4>The first command</h4>
+            <p>"Take off your sandals." Before the mission, the reverence. The ground was holy because God was on it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: Reflection on the bush -->
+  <section class="slide slide-reflect theme-dark">
+    <span class="corner-mark tl">I.1 · Reflection</span>
+    <div class="bg-quote">&ldquo;</div>
+    <div class="slide-inner">
+      <p class="eyebrow anim-1" style="color: var(--gold-light);">Notice</p>
+      <h2 class="anim-2">God calls us<br>in the middle of<br><span class="emphasis">the routine.</span></h2>
+      <div class="questions">
+        <p class="anim-3">He doesn't wait for us to be in a perfect spiritual state. The burning bush appears alongside the sheep.</p>
+        <p class="anim-4">What "burning bush" have you been walking past on the way to your usual work?</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACT II — THE FIVE EXCUSES -->
+  <section class="slide slide-opener theme-opener">
+    <span class="corner-mark tl">Act II · of 03</span>
+    <div class="slide-inner">
+      <span class="numeral anim-1">II.</span>
+      <p class="eyebrow anim-2">Act two</p>
+      <h2 class="anim-3">The Five Excuses</h2>
+      <p class="opener-text anim-4">
+        From Exodus 3:11 through 4:17, Moses lists five reasons he can't go. God answers every one. The pattern of the excuses is the pattern of our own resistance — and so is the pattern of God's response.
+      </p>
+    </div>
+  </section>
+
+  <!-- SLIDE: 1st excuse -->
+  <section class="slide">
+    <span class="corner-mark tl">II.1 · The first excuse</span>
+    <div class="slide-inner">
+      <div class="story-grid">
+        <div class="story-left">
+          <p class="character anim-1">Moses</p>
+          <span class="verse-ref anim-2">Exodus 3:11-12</span>
+          <h2 class="anim-3">"Who am I<br>to go to Pharaoh?"</h2>
+        </div>
+        <div class="beats">
+          <div class="beat anim-4" data-step="i.">
+            <h4>The problem</h4>
+            <p>Focus on personal unworthiness. Looking at the past, the failures, the inadequacy.</p>
+          </div>
+          <div class="beat anim-5" data-step="ii.">
+            <h4>God's answer</h4>
+            <p>"I will be with you." Not "you're qualified" — but "I'm coming."</p>
+          </div>
+          <div class="beat anim-6" data-step="iii.">
+            <h4>The truth</h4>
+            <p>It's not about your ability. It's about His presence.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: 2nd excuse -->
+  <section class="slide">
+    <span class="corner-mark tl">II.2 · The second excuse</span>
+    <div class="slide-inner">
+      <div class="story-grid">
+        <div class="story-left">
+          <p class="character anim-1">Moses</p>
+          <span class="verse-ref anim-2">Exodus 3:13-14</span>
+          <h2 class="anim-3">"And who<br>are <em>you</em>?"</h2>
+        </div>
+        <div class="beats">
+          <div class="beat anim-4" data-step="i.">
+            <h4>The problem</h4>
+            <p>Wanting to fully understand God before obeying. Theology as a stalling tactic.</p>
+          </div>
+          <div class="beat anim-5" data-step="ii.">
+            <h4>God's answer</h4>
+            <p>"I AM WHO I AM." A name big enough to obey, small enough to remember.</p>
+          </div>
+          <div class="beat anim-6" data-step="iii.">
+            <h4>The truth</h4>
+            <p>God reveals Himself progressively — to those who start walking.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: 3rd excuse -->
+  <section class="slide">
+    <span class="corner-mark tl">II.3 · The third excuse</span>
+    <div class="slide-inner">
+      <div class="story-grid">
+        <div class="story-left">
+          <p class="character anim-1">Moses</p>
+          <span class="verse-ref anim-2">Exodus 4:1-9</span>
+          <h2 class="anim-3">"What if<br>they don't believe?"</h2>
+        </div>
+        <div class="beats">
+          <div class="beat anim-4" data-step="i.">
+            <h4>The problem</h4>
+            <p>Fear of rejection. Pre-living the conversation that hasn't happened yet.</p>
+          </div>
+          <div class="beat anim-5" data-step="ii.">
+            <h4>God's answer</h4>
+            <p>Signs in his own hand. The rod. The leprous skin restored. Confirmation provided, not earned.</p>
+          </div>
+          <div class="beat anim-6" data-step="iii.">
+            <h4>The truth</h4>
+            <p>God confirms His own call. He's not sending you to defend Him.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: 4th excuse -->
+  <section class="slide">
+    <span class="corner-mark tl">II.4 · The fourth excuse</span>
+    <div class="slide-inner">
+      <div class="story-grid">
+        <div class="story-left">
+          <p class="character anim-1">Moses</p>
+          <span class="verse-ref anim-2">Exodus 4:10-12</span>
+          <h2 class="anim-3">"I'm not<br>a good speaker."</h2>
+        </div>
+        <div class="beats">
+          <div class="beat anim-4" data-step="i.">
+            <h4>The problem</h4>
+            <p>Focus on the limitation. The disqualifier you've quietly accepted as final.</p>
+          </div>
+          <div class="beat anim-5" data-step="ii.">
+            <h4>God's answer</h4>
+            <p>"Who made man's mouth?" The maker is the equipper.</p>
+          </div>
+          <div class="beat anim-6" data-step="iii.">
+            <h4>The truth</h4>
+            <p>God uses our weaknesses for His glory — not despite them, through them.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: 5th excuse -->
+  <section class="slide">
+    <span class="corner-mark tl">II.5 · The fifth excuse</span>
+    <div class="slide-inner">
+      <div class="story-grid">
+        <div class="story-left">
+          <p class="character anim-1">Moses</p>
+          <span class="verse-ref anim-2">Exodus 4:13-17</span>
+          <h2 class="anim-3">"Please<br>send someone else."</h2>
+        </div>
+        <div class="beats">
+          <div class="beat anim-4" data-step="i.">
+            <h4>The problem</h4>
+            <p>The polite refusal. No more arguments — just no.</p>
+          </div>
+          <div class="beat anim-5" data-step="ii.">
+            <h4>God's answer</h4>
+            <p>His anger is kindled — but He still sends Aaron alongside. Mercy that doesn't excuse.</p>
+          </div>
+          <div class="beat anim-6" data-step="iii.">
+            <h4>The truth</h4>
+            <p>God can use someone else. But you lose the blessing of having been the one called.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: Reflection — central truth -->
+  <section class="slide slide-reflect theme-dark">
+    <span class="corner-mark tl">II · Central truth</span>
+    <div class="bg-quote">&ldquo;</div>
+    <div class="slide-inner">
+      <p class="eyebrow anim-1" style="color: var(--gold-light);">The pattern under all five</p>
+      <h2 class="anim-2">It's not about<br>who you are.<br><span class="emphasis">It's about Who calls you.</span></h2>
+      <div class="questions">
+        <p class="anim-3">Every excuse points back at Moses. Every answer points back at God.</p>
+        <p class="anim-4">Whose name does your hesitation keep landing on — yours, or His?</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACT III — TODAY -->
+  <section class="slide slide-opener theme-opener">
+    <span class="corner-mark tl">Act III · of 03</span>
+    <div class="slide-inner">
+      <span class="numeral anim-1">III.</span>
+      <p class="eyebrow anim-2">Act three</p>
+      <h2 class="anim-3">Our Response Today</h2>
+      <p class="opener-text anim-4">
+        The bush is gone. The voice doesn't come from a flame anymore. But the call still arrives — quieter, more familiar — and the excuses still come, dressed in modern clothes.
+      </p>
+    </div>
+  </section>
+
+  <!-- SLIDE: Modern callings & excuses -->
+  <section class="slide">
+    <span class="corner-mark tl">III.1 · Modern echoes</span>
+    <div class="slide-inner">
+      <div class="story-grid">
+        <div class="story-left">
+          <p class="character anim-1">Today</p>
+          <span class="verse-ref anim-2">Your week</span>
+          <h2 class="anim-3">The call you<br>keep walking past.<br>The excuse you<br>keep using.</h2>
+        </div>
+        <div class="beats">
+          <div class="beat anim-4" data-step="i.">
+            <h4>The calls</h4>
+            <p>A ministry. A testimony at work. Forgiveness owed. Reconciliation refused. A step of faith you can name.</p>
+          </div>
+          <div class="beat anim-5" data-step="ii.">
+            <h4>The excuses</h4>
+            <p>"I don't have time." "I'm not ready." "What if it goes wrong?" "It's not my gift." "When things calm down."</p>
+          </div>
+          <div class="beat anim-6" data-step="iii.">
+            <h4>The mirror</h4>
+            <p>Each modern excuse maps to one of Moses' five. Same fear, same script, different costume.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: Four truths -->
+  <section class="slide slide-truths theme-dark">
+    <span class="corner-mark tl">III.2 · The four truths</span>
+    <div class="slide-inner">
+      <p class="eyebrow anim-1" style="color: var(--gold-light);">What changes when we stop arguing</p>
+      <h2 class="anim-2" style="font-family: var(--display); font-style: italic; font-weight: 300; color: var(--parchment);">Four things become true.</h2>
+      <div class="truths-grid">
+        <div class="truth-item anim-3" data-num="1.">
+          <p>God doesn't call the equipped. He equips the called.</p>
+        </div>
+        <div class="truth-item anim-4" data-num="2.">
+          <p>Our limitations are opportunities for His glory. <em style="color: var(--gold-light);">(2 Cor. 12:9)</em></p>
+        </div>
+        <div class="truth-item anim-5" data-num="3.">
+          <p>The past doesn't decide the future when God walks in.</p>
+        </div>
+        <div class="truth-item anim-6" data-num="4.">
+          <p>True humility is saying "yes" to God — not "I'm not worthy."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section class="slide slide-closing theme-dark">
+    <span class="corner-mark tl">Closing</span>
+    <div class="slide-inner inner">
+      <p class="eyebrow anim-1" style="color: var(--gold-light); justify-content: center;">The question that won't leave</p>
+      <h2 class="anim-2">What if it were you —<br><strong>before the burning bush, today?</strong></h2>
+      <div class="ornament anim-3">· · ·</div>
+      <p class="prayer anim-4">
+        "Lord, like Moses, I take off my sandals and recognize this is holy ground. Forgive my excuses. Help me say <em class="accent" style="color: var(--gold-light);">yes</em>. May I trust Your ability over my inability. In Jesus' name, amen."
+      </p>
+      <p class="signature anim-5">Sermon 1 of 5 · Five Crossings</p>
+    </div>
+  </section>
+
+</div>
+
+<!-- Navigation -->
+<div class="progress-dots" id="dots"></div>
+
+<nav class="nav">
+  <button id="prev" aria-label="Previous">← Previous</button>
+  <span class="counter" id="counter">01 / 00</span>
+  <button id="next" aria-label="Next">Next →</button>
+</nav>
+
+<div class="keyhint">← → · space · home/end</div>
+
+<!-- Scripts -->
+<script src="../assets/js/slides.js"></script>
+
+</body>
+</html>

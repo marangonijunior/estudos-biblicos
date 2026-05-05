@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>What If It Were You? — Biblical Studies</title>
+<meta name="description" content="Nine decisive moments in the Bible: Moses, Noah and Lot. If you were in their place, what would you have done?">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="What If It Were You? — Biblical Studies">
+<meta property="og:description" content="Nine decisive moments in the lives of Moses, Noah and Lot. The question that won't leave your head.">
+
+<!-- Base Styles -->
+<link rel="stylesheet" href="../assets/css/base.css">
+
+<!-- Specific styles for this study -->
+<style>
+  html, body {
+    overflow: hidden;
+    background: var(--ink);
+  }
+
+  /* ===== Slide type variations ===== */
+  .slide-title {
+    background: var(--ink);
+    color: var(--parchment);
+  }
+
+  .slide-title .bg-word {
+    position: absolute;
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(20rem, 45vw, 50rem);
+    color: var(--parchment);
+    opacity: 0.04;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    line-height: 0.8;
+    letter-spacing: -0.05em;
+    user-select: none;
+  }
+
+  .slide-title h1 {
+    position: relative;
+    z-index: 2;
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  .slide-title h1 .line2 {
+    display: block;
+    font-weight: 800;
+    font-style: normal;
+    color: var(--gold-light);
+  }
+
+  .slide-title .tagline {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-top: 2.5rem;
+    opacity: 0.8;
+  }
+
+  .slide-title .sub {
+    max-width: 42ch;
+    margin-top: 1.8rem;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    opacity: 0.75;
+    font-style: italic;
+  }
+
+  /* ===== Opener slides ===== */
+  .slide-opener .numeral {
+    font-family: var(--display);
+    font-weight: 200;
+    font-style: italic;
+    font-size: clamp(8rem, 18vw, 16rem);
+    color: var(--gold);
+    line-height: 0.9;
+    margin-bottom: -1rem;
+    display: block;
+  }
+
+  .slide-opener h2 {
+    font-weight: 600;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    margin-bottom: 2rem;
+  }
+
+  .slide-opener .opener-text {
+    max-width: 60ch;
+    font-size: 1.35rem;
+    line-height: 1.6;
+    color: #3a332c;
+    border-left: 2px solid var(--gold);
+    padding-left: 1.5rem;
+  }
+
+  /* ===== Story slides ===== */
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .story-left .verse-ref {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--ink);
+    color: var(--parchment);
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+  }
+
+  .story-left h2 {
+    margin-bottom: 2rem;
+    font-weight: 600;
+  }
+
+  .story-left .character {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin-bottom: 0.75rem;
+  }
+
+  .beats {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .beat {
+    position: relative;
+    padding-left: 2.5rem;
+  }
+
+  .beat::before {
+    content: attr(data-step);
+    position: absolute;
+    left: 0; top: 0.1rem;
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.8rem;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .beat h4 {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink);
+    opacity: 0.55;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+
+  .beat p {
+    font-size: 1.1rem;
+    line-height: 1.55;
+    color: #3a332c;
+  }
+
+  /* ===== Reflection slides ===== */
+  .slide-reflect .bg-quote {
+    position: absolute;
+    top: 2rem; left: 4rem;
+    font-family: var(--display);
+    font-size: 20rem;
+    line-height: 1;
+    color: var(--gold);
+    opacity: 0.15;
+    font-style: italic;
+    user-select: none;
+  }
+
+  .slide-reflect h2 {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--parchment);
+    position: relative;
+    z-index: 2;
+  }
+
+  .slide-reflect h2 .emphasis {
+    font-weight: 800;
+    font-style: normal;
+    color: var(--gold-light);
+  }
+
+  .slide-reflect .questions {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    max-width: 60ch;
+  }
+
+  .slide-reflect .questions p {
+    font-size: 1.35rem;
+    line-height: 1.5;
+    padding-left: 1.5rem;
+    border-left: 1px solid var(--gold);
+    opacity: 0.9;
+  }
+
+  /* ===== Consequence slide ===== */
+  .slide-consequence .consequence-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .consequence-label {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 4rem;
+    color: var(--crimson);
+    line-height: 0.9;
+    white-space: nowrap;
+    transform: rotate(-3deg);
+    transform-origin: left top;
+  }
+
+  .consequence-text {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    max-width: 55ch;
+    padding-top: 1rem;
+    border-top: 1px solid var(--ink);
+  }
+
+  /* ===== Closing slide ===== */
+  .slide-closing .inner {
+    max-width: 700px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .slide-closing h2 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: 2rem;
+  }
+
+  .slide-closing h2 strong {
+    display: block;
+    font-weight: 800;
+    font-style: normal;
+    color: var(--gold-light);
+    margin-top: 0.5rem;
+  }
+
+  .slide-closing .signature {
+    margin-top: 3rem;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    opacity: 0.5;
+  }
+
+  .ornament {
+    font-family: var(--display);
+    font-size: 3rem;
+    color: var(--gold);
+    margin: 2rem 0;
+    letter-spacing: 1rem;
+  }
+
+  /* ===== Key hint ===== */
+  .keyhint {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 1000;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: rgba(244, 236, 220, 0.5);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    background: rgba(26, 21, 18, 0.6);
+    backdrop-filter: blur(6px);
+    padding: 0.5rem 0.8rem;
+    border-radius: 100px;
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 900px) {
+    .story-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .consequence-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .consequence-label {
+      font-size: 2.5rem;
+      transform: none;
+    }
+
+    .slide-reflect .bg-quote {
+      font-size: 10rem;
+      left: 1rem;
+      top: 0.5rem;
+    }
+
+    .keyhint {
+      display: none;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<div class="deck" id="deck">
+
+  <!-- SLIDE 1: Cover -->
+  <section class="slide slide-title theme-dark active">
+    <span class="corner-mark tl">Biblical study · 25 slides × 3 acts</span>
+    <span class="corner-mark br">Moses · Noah · Lot</span>
+    <div class="bg-word fade-in">if</div>
+    <div class="slide-inner" style="text-align: left;">
+      <p class="eyebrow anim-1" style="color: var(--gold-light);">A reflection in three acts</p>
+      <h1 class="anim-2">
+        What&nbsp;if
+        <span class="line2">it&nbsp;were&nbsp;you?</span>
+      </h1>
+      <p class="sub anim-3">
+        Nine decisive moments in the Bible — and the question no one who reads them carefully can shake.
+      </p>
+      <p class="tagline anim-4">Open · Read · Respond</p>
+    </div>
+  </section>
+
+  <!-- SLIDE 2: Method intro -->
+  <section class="slide slide-opener theme-opener">
+    <span class="corner-mark tl">00 · Before we begin</span>
+    <div class="slide-inner">
+      <span class="numeral anim-1">§</span>
+      <p class="eyebrow anim-2">The method</p>
+      <h2 class="anim-3">Each story, three questions.</h2>
+      <p class="opener-text anim-4">
+        For each passage we'll look at <em class="accent">what came before</em>, <em class="accent">what happened in the moment</em>, and <em class="accent">what the consequences were</em>. Then the invitation: if <strong>you</strong> were there, in the character's place — with the same fear, the same urgency, the same delay from God — what would you have done?
+      </p>
+    </div>
+  </section>
+
+  <!-- ACT I — MOSES -->
+  <section class="slide slide-opener theme-opener">
+    <span class="corner-mark tl">Act I · of 03</span>
+    <div class="slide-inner">
+      <span class="numeral anim-1">I.</span>
+      <p class="eyebrow anim-2">Act one</p>
+      <h2 class="anim-3">Moses</h2>
+      <p class="opener-text anim-4">
+        The shepherd who became a deliverer. He met God in a bush, climbed a mountain, and came down to an impatient people. Four scenes: the call, the sea, the calf, the land he never set foot on.
+      </p>
+    </div>
+  </section>
+
+  <!-- SLIDE: Moses - Burning Bush -->
+  <section class="slide">
+    <span class="corner-mark tl">I.1 · The call</span>
+    <div class="slide-inner">
+      <div class="story-grid">
+        <div class="story-left">
+          <p class="character anim-1">Moses</p>
+          <span class="verse-ref anim-2">Exodus 3:1-6</span>
+          <h2 class="anim-3">The bush that burned<br>but was not consumed.</h2>
+        </div>
+        <div class="beats">
+          <div class="beat anim-4" data-step="i.">
+            <h4>Before</h4>
+            <p>Moses was tending sheep in the Midian wilderness — a fugitive from Egypt, 40 years of quiet routine — when he saw a bush in flames that did not burn up.</p>
+          </div>
+          <div class="beat anim-5" data-step="ii.">
+            <h4>After</h4>
+            <p>God called him by name and sent him to deliver Israel. Moses covered his face and took off his sandals.</p>
+          </div>
+          <div class="beat anim-6" data-step="iii.">
+            <h4>Consequences</h4>
+            <p>There he received his life's mission. Removing his sandals was reverence — the ground was holy because God was on it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: Moses - bush reflection -->
+  <section class="slide slide-reflect theme-dark">
+    <span class="corner-mark tl">I.1 · Reflection</span>
+    <div class="bg-quote">&ldquo;</div>
+    <div class="slide-inner">
+      <p class="eyebrow anim-1" style="color: var(--gold-light);">What if it were you?</p>
+      <h2 class="anim-2">God calls you<br>to a mission<br><span class="emphasis">you didn't ask for.</span></h2>
+      <div class="questions">
+        <p class="anim-3">Would you have removed your sandals — or argued there were more qualified people?</p>
+        <p class="anim-4">What, today, is your burning bush by the side of the road that you keep walking past?</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: Moses - Red Sea -->
+  <section class="slide">
+    <span class="corner-mark tl">I.2 · The sea</span>
+    <div class="slide-inner">
+      <div class="story-grid">
+        <div class="story-left">
+          <p class="character anim-1">Moses</p>
+          <span class="verse-ref anim-2">Exodus 14:21-31</span>
+          <h2 class="anim-3">Between Pharaoh<br>and a wall of water.</h2>
+        </div>
+        <div class="beats">
+          <div class="beat anim-4" data-step="i.">
+            <h4>Before</h4>
+            <p>Israel left Egypt and was cornered: the sea ahead, Pharaoh's army behind. Panic. At God's command, Moses stretched out his hand.</p>
+          </div>
+          <div class="beat anim-5" data-step="ii.">
+            <h4>After</h4>
+            <p>The sea opened. The people crossed on dry ground. The Egyptian army tried to follow the same path.</p>
+          </div>
+          <div class="beat anim-6" data-step="iii.">
+            <h4>Consequences</h4>
+            <p>The Egyptians died in the sea; Israel saw God's power and believed in the Lord — and in Moses as His messenger.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: Sea reflection -->
+  <section class="slide slide-reflect theme-dark">
+    <span class="corner-mark tl">I.2 · Reflection</span>
+    <div class="bg-quote">&ldquo;</div>
+    <div class="slide-inner">
+      <p class="eyebrow anim-1" style="color: var(--gold-light);">What if it were you?</p>
+      <h2 class="anim-2">No way out in sight,<br>and an entire people<br><span class="emphasis">looking at you.</span></h2>
+      <div class="questions">
+        <p class="anim-3">Would you stretch out your hand over the sea — or keep looking for a more reasonable plan B?</p>
+        <p class="anim-4">What "Red Sea" stands in front of you right now, waiting on obedience before the miracle?</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: Golden Calf -->
+  <section class="slide">
+    <span class="corner-mark tl">I.3 · The calf</span>
+    <div class="slide-inner">
+      <div class="story-grid">
+        <div class="story-left">
+          <p class="character anim-1">Moses</p>
+          <span class="verse-ref anim-2">Exodus 32:1-35</span>
+          <h2 class="anim-3">The leader delays.<br>The people improvise a god.</h2>
+        </div>
+        <div class="beats">
+          <div class="beat anim-4" data-step="i.">
+            <h4>Before</h4>
+            <p>Moses was on Sinai receiving the tablets. The people grew tired of waiting — forty days felt like a lifetime.</p>
+          </div>
+          <div class="beat anim-5" data-step="ii.">
+            <h4>After</h4>
+            <p>Aaron gave in, melted the gold, shaped a calf. The people worshiped. Moses came down, saw the festival, broke the tablets and destroyed the idol.</p>
+          </div>
+          <div class="beat anim-6" data-step="iii.">
+            <h4>Consequences</h4>
+            <p>About 3,000 men died that day. Severe judgment fell on the people for idolatry.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: Calf reflection -->
+  <section class="slide slide-reflect theme-dark">
+    <span class="corner-mark tl">I.3 · Reflection</span>
+    <div class="bg-quote">&ldquo;</div>
+    <div class="slide-inner">
+      <p class="eyebrow anim-1" style="color: var(--gold-light);">What if it were you?</p>
+      <h2 class="anim-2">God seems to delay.<br>Everyone wants<br><span class="emphasis">an answer now.</span></h2>
+      <div class="questions">
+        <p class="anim-3">Would you be the Aaron — the one who caves to avoid conflict — or would you have held out the wait?</p>
+        <p class="anim-4">What "golden calves" do we melt down when God seems late?</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: Promised Land -->
+  <section class="slide">
+    <span class="corner-mark tl">I.4 · The land that wasn't</span>
+    <div class="slide-inner">
+      <div class="story-grid">
+        <div class="story-left">
+          <p class="character anim-1">Moses</p>
+          <span class="verse-ref anim-2">Numbers 14:1-35</span>
+          <h2 class="anim-3">One step away<br>from the promise.</h2>
+        </div>
+        <div class="beats">
+          <div class="beat anim-4" data-step="i.">
+            <h4>Before</h4>
+            <p>The twelve spies returned from Canaan. Ten brought a fearful report — giants, walls. The people began to grumble.</p>
+          </div>
+          <div class="beat anim-5" data-step="ii.">
+            <h4>After</h4>
+            <p>The people refused to trust God and wanted to return to Egypt. Only Joshua and Caleb spoke up to advance.</p>
+          </div>
+          <div class="beat anim-6" data-step="iii.">
+            <h4>Consequences</h4>
+            <p>That generation spent 40 years in the wilderness and never entered the land. Only Joshua and Caleb set foot in Canaan.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: Promised land reflection -->
+  <section class="slide slide-reflect theme-dark">
+    <span class="corner-mark tl">I.4 · Reflection</span>
+    <div class="bg-quote">&ldquo;</div>
+    <div class="slide-inner">
+      <p class="eyebrow anim-1" style="color: var(--gold-light);">What if it were you?</p>
+      <h2 class="anim-2">The promise is right there.<br>But there are giants<br><span class="emphasis">in the way.</span></h2>
+      <div class="questions">
+        <p class="anim-3">Would you have been with the majority who saw giants, or with the two who saw a God bigger than them?</p>
+        <p class="anim-4">What promises have you <em>almost</em> touched — and pulled back from at the last step?</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACT II — NOAH -->
+  <section class="slide slide-opener theme-opener">
+    <span class="corner-mark tl">Act II · of 03</span>
+    <div class="slide-inner">
+      <span class="numeral anim-1">II.</span>
+      <p class="eyebrow anim-2">Act two</p>
+      <h2 class="anim-3">Noah</h2>
+      <p class="opener-text anim-4">
+        The man who heard the impossible and started hammering anyway. Three scenes: the absurd call, obedience against the crowd, and the man already saved who still stumbles.
+      </p>
+    </div>
+  </section>
+
+  <!-- SLIDE: Noah - God speaks -->
+  <section class="slide">
+    <span class="corner-mark tl">II.1 · The call</span>
+    <div class="slide-inner">
+      <div class="story-grid">
+        <div class="story-left">
+          <p class="character anim-1">Noah</p>
+          <span class="verse-ref anim-2">Genesis 6:13-22; 7:1-5</span>
+          <h2 class="anim-3">"Build an ark<br>for a rain<br>no one has seen."</h2>
+        </div>
+        <div class="beats">
+          <div class="beat anim-4" data-step="i.">
+            <h4>Before</h4>
+            <p>The earth was corrupt and full of violence. In the middle of it, Noah found favor in God's eyes — a righteous man in his generation.</p>
+          </div>
+          <div class="beat anim-5" data-step="ii.">
+            <h4>After</h4>
+            <p>God explained the flood, gave the dimensions of the ark, told him to build. Noah obeyed — no protocol, no precedent.</p>
+          </div>
+          <div class="beat anim-6" data-step="iii.">
+            <h4>Consequences</h4>
+            <p>Noah and his family were preserved. He became an eternal example of obedience in the midst of chaos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: Noah call reflection -->
+  <section class="slide slide-reflect theme-dark">
+    <span class="corner-mark tl">II.1 · Reflection</span>
+    <div class="bg-quote">&ldquo;</div>
+    <div class="slide-inner">
+      <p class="eyebrow anim-1" style="color: var(--gold-light);">What if it were you?</p>
+      <h2 class="anim-2">God asks for something<br>nobody<br><span class="emphasis">will understand.</span></h2>
+      <div class="questions">
+        <p class="anim-3">Would you start the work — or wait for the first cloud to be sure?</p>
+        <p class="anim-4">What's the "ark" God already told you to start, but you're still waiting on more signs?</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: Noah's challenges -->
+  <section class="slide">
+    <span class="corner-mark tl">II.2 · The challenges</span>
+    <div class="slide-inner">
+      <div class="story-grid">
+        <div class="story-left">
+          <p class="character anim-1">Noah</p>
+          <span class="verse-ref anim-2">Genesis 6:9-22; 7:1-24</span>
+          <h2 class="anim-3">Decades of work<br>under mockery.</h2>
+        </div>
+        <div class="beats">
+          <div class="beat anim-4" data-step="i.">
+            <h4>Before</h4>
+            <p>Noah lived in a corrupt generation and received an enormous task: build something nobody understood, for a long time, with no sign of rain.</p>
+          </div>
+          <div class="beat anim-5" data-step="ii.">
+            <h4>After</h4>
+            <p>He built the ark, faced disbelief all around him, and finally entered with his family — doors closed by God Himself.</p>
+          </div>
+          <div class="beat anim-6" data-step="iii.">
+            <h4>Consequences</h4>
+            <p>The flood came. God preserved Noah's household. After the waters, He sealed a new covenant with humanity.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: Noah challenges reflection -->
+  <section class="slide slide-reflect theme-dark">
+    <span class="corner-mark tl">II.2 · Reflection</span>
+    <div class="bg-quote">&ldquo;</div>
+    <div class="slide-inner">
+      <p class="eyebrow anim-1" style="color: var(--gold-light);">What if it were you?</p>
+      <h2 class="anim-2">Years of work.<br>Zero validation.<br><span class="emphasis">Zero visible results.</span></h2>
+      <div class="questions">
+        <p class="anim-3">Would you have persisted through the 30th time someone walked by and mocked the work?</p>
+        <p class="anim-4">Where, today, do you need to obey before understanding — or before seeing fruit?</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: Noah's wine -->
+  <section class="slide">
+    <span class="corner-mark tl">II.3 · After the victory</span>
+    <div class="slide-inner">
+      <div class="story-grid">
+        <div class="story-left">
+          <p class="character anim-1">Noah</p>
+          <span class="verse-ref anim-2">Genesis 9:20-27</span>
+          <h2 class="anim-3">Saved from the flood,<br>stumbling in the peace.</h2>
+        </div>
+        <div class="beats">
+          <div class="beat anim-4" data-step="i.">
+            <h4>Before</h4>
+            <p>The flood was over. Noah went back to working the land — life starting again, routine reinstalled.</p>
+          </div>
+          <div class="beat anim-5" data-step="ii.">
+            <h4>After</h4>
+            <p>He planted a vineyard, drank the wine and got drunk. Ham saw his father's nakedness; Shem and Japheth covered him walking backwards, with respect.</p>
+          </div>
+          <div class="beat anim-6" data-step="iii.">
+            <h4>Consequences</h4>
+            <p>A curse fell on Canaan (Ham's son) and a blessing on Shem and Japheth. The episode exposes human fragility even after the miracle.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: Noah wine reflection -->
+  <section class="slide slide-reflect theme-dark">
+    <span class="corner-mark tl">II.3 · Reflection</span>
+    <div class="bg-quote">&ldquo;</div>
+    <div class="slide-inner">
+      <p class="eyebrow anim-1" style="color: var(--gold-light);">What if it were you?</p>
+      <h2 class="anim-2">After the crossing,<br>danger changes<br><span class="emphasis">addresses.</span></h2>
+      <div class="questions">
+        <p class="anim-3">Would you have been Ham (exposing) or Shem and Japheth (covering) when seeing someone's weakness?</p>
+        <p class="anim-4">In what areas is your greatest risk not the storm — but the peace after it?</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACT III — LOT -->
+  <section class="slide slide-opener theme-opener">
+    <span class="corner-mark tl">Act III · of 03</span>
+    <div class="slide-inner">
+      <span class="numeral anim-1">III.</span>
+      <p class="eyebrow anim-2">Act three</p>
+      <h2 class="anim-3">Lot</h2>
+      <p class="opener-text anim-4">
+        The man who chose the green plain — and lost his ground. Two scenes: the escape from a doomed city, and what the ruins did to those who survived.
+      </p>
+    </div>
+  </section>
+
+  <!-- SLIDE: Lot Sodom -->
+  <section class="slide">
+    <span class="corner-mark tl">III.1 · The escape</span>
+    <div class="slide-inner">
+      <div class="story-grid">
+        <div class="story-left">
+          <p class="character anim-1">Lot</p>
+          <span class="verse-ref anim-2">Genesis 19:1-29</span>
+          <h2 class="anim-3">Leave now.<br>And don't look<br>back.</h2>
+        </div>
+        <div class="beats">
+          <div class="beat anim-4" data-step="i.">
+            <h4>Before</h4>
+            <p>Sodom was under imminent judgment. The angels arrived in the city and Lot received them, hosted them, protected them.</p>
+          </div>
+          <div class="beat anim-5" data-step="ii.">
+            <h4>After</h4>
+            <p>Lot left with his family in the morning, dragged by mercy. But his wife looked back — and became a pillar of salt.</p>
+          </div>
+          <div class="beat anim-6" data-step="iii.">
+            <h4>Consequences</h4>
+            <p>Sodom and Gomorrah were destroyed by fire and brimstone. Lot was saved — but he arrived on the other side with fewer people than he left with.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: Lot Sodom reflection -->
+  <section class="slide slide-reflect theme-dark">
+    <span class="corner-mark tl">III.1 · Reflection</span>
+    <div class="bg-quote">&ldquo;</div>
+    <div class="slide-inner">
+      <p class="eyebrow anim-1" style="color: var(--gold-light);">What if it were you?</p>
+      <h2 class="anim-2">Leaving is obedience.<br>Looking back<br><span class="emphasis">is still wanting to stay.</span></h2>
+      <div class="questions">
+        <p class="anim-3">Would you have left right away, or kept negotiating one more day to "wrap things up"?</p>
+        <p class="anim-4">What "Sodom" does your heart still long for, even after God pulled you out of it?</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: Lot cave -->
+  <section class="slide">
+    <span class="corner-mark tl">III.2 · The isolation</span>
+    <div class="slide-inner">
+      <div class="story-grid">
+        <div class="story-left">
+          <p class="character anim-1">Lot</p>
+          <span class="verse-ref anim-2">Genesis 19:30-38</span>
+          <h2 class="anim-3">What trauma<br>and isolation<br>manufacture.</h2>
+        </div>
+        <div class="beats">
+          <div class="beat anim-4" data-step="i.">
+            <h4>Before</h4>
+            <p>Lot and his daughters lived isolated in a cave, fugitives, traumatized, after the destruction of Sodom.</p>
+          </div>
+          <div class="beat anim-5" data-step="ii.">
+            <h4>After</h4>
+            <p>The daughters made their father drunk on two consecutive nights and slept with him, convinced there were no men left on earth.</p>
+          </div>
+          <div class="beat anim-6" data-step="iii.">
+            <h4>Consequences</h4>
+            <p>Moab and Ben-Ammi were born — fathers of the Moabites and Ammonites, peoples who would clash with Israel for centuries. The family was marked by moral disorder.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: Lot cave reflection -->
+  <section class="slide slide-reflect theme-dark">
+    <span class="corner-mark tl">III.2 · Reflection</span>
+    <div class="bg-quote">&ldquo;</div>
+    <div class="slide-inner">
+      <p class="eyebrow anim-1" style="color: var(--gold-light);">What if it were you?</p>
+      <h2 class="anim-2">Surviving<br>is not the same<br><span class="emphasis">as being healed.</span></h2>
+      <div class="questions">
+        <p class="anim-3">What do isolation, fear, and wine manufacture in someone who hasn't processed what they lived through?</p>
+        <p class="anim-4">Who have you let into your cave — or are you alone with God and people who only drink with you?</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SYNTHESIS -->
+  <section class="slide slide-consequence theme-deep">
+    <span class="corner-mark tl">Synthesis · Consequences</span>
+    <div class="slide-inner">
+      <p class="eyebrow anim-1">The common thread</p>
+      <div class="consequence-grid">
+        <div class="consequence-label anim-2">Every<br>choice<br>echoes.</div>
+        <p class="consequence-text anim-3">
+          Moses obeys — a sea opens and a people believes. The people doubt — an entire generation dies in the wilderness. Noah hammers through disbelief — a family survives the end of the world. Noah drinks his own wine — and a curse spans centuries. Lot hesitates — and loses his wife. Lot isolates himself — and the household manufactures its own ruin.
+          <br><br>
+          <em class="accent">In every passage, obedience (or its absence) writes the next chapters for people not yet born.</em>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section class="slide slide-closing theme-dark">
+    <span class="corner-mark tl">Closing</span>
+    <div class="slide-inner inner">
+      <p class="eyebrow anim-1" style="color: var(--gold-light); justify-content: center;">One last question</p>
+      <h2 class="anim-2">What if it were you —<br><strong>today?</strong></h2>
+      <div class="ornament anim-3">· · ·</div>
+      <p class="body-text anim-4" style="color: rgba(244,236,220,0.85); max-width: 45ch;">
+        Which of these stories hit you hardest? Which has the most to do with the week you're living right now — the bush, the sea, the delay, the giants, the ark, the vineyard, the escape, or the cave?
+      </p>
+      <p class="signature anim-5">End · Thank you</p>
+    </div>
+  </section>
+
+</div>
+
+<!-- Navigation -->
+<div class="progress-dots" id="dots"></div>
+
+<nav class="nav">
+  <button id="prev" aria-label="Previous">← Previous</button>
+  <span class="counter" id="counter">01 / 00</span>
+  <button id="next" aria-label="Next">Next →</button>
+</nav>
+
+<div class="keyhint">← → · space · home/end</div>
+
+<!-- Scripts -->
+<script src="../assets/js/slides.js"></script>
+
+</body>
+</html>
