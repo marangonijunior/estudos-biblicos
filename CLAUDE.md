@@ -45,7 +45,8 @@ There is also an unused `studies/` folder with a legacy slide deck (`what-if-it-
    8. **Closing** (`slide-closing theme-dark`) — final question, ornament, prayer, signature.
 5. **Animation classes** `anim-1` through `anim-6` stagger element entry inside the active slide. Apply them in reading order. Don't use them on every element — use them where the eye should land in sequence.
 6. **The slide counter and dots populate automatically** from `slides.js`. You don't need to count slides or build the navigation.
-7. **Update the parent series page** at `series/<series-slug>.html`: confirm that sermon's card description and passage match what's actually in the new sermon. If the card was a placeholder, update it.
+7. **Wire up the floating sermon video.** Every slide-deck sermon ships with an `aside.float-video` block (right after `<div class="grain"></div>`) and the matching `.float-video*` styles in the page's `<style>` block. The video stays fixed while the user navigates slides, so they can watch and read in parallel. Copy both pieces from `sermons/moses-1-the-call.html`, then paste your YouTube video ID into the iframe `src` (replacing the `VIDEO_ID` placeholder). The video sits top-right on desktop and top-center on mobile; the `.progress-dots` are auto-shifted below it on tablet+. Users can dismiss it with the × button.
+8. **Update the parent series page** at `series/<series-slug>.html`: confirm that sermon's card description and passage match what's actually in the new sermon. If the card was a placeholder, update it.
 
 If a sermon isn't written yet, use the **placeholder template** — see [`sermons/moses-2-red-sea.html`](sermons/moses-2-red-sea.html). It's a single full-screen "Coming Soon" panel that links back to the series. Use this for every unwritten sermon so the series links never break.
 

@@ -347,6 +347,111 @@
     border-radius: 100px;
   }
 
+  /* ===== Floating sermon video (fixed; persists across slide navigation) ===== */
+  .float-video {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1500;
+    width: 420px;
+    background: var(--ink);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(212, 169, 98, 0.25);
+  }
+
+  .float-video-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+
+  .float-video-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+
+  .float-video-close {
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    z-index: 2;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(26, 21, 18, 0.85);
+    color: var(--parchment);
+    border: 1px solid rgba(212, 169, 98, 0.3);
+    font-family: var(--mono);
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+    transition: background var(--duration-fast), color var(--duration-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .float-video-close:hover {
+    background: var(--gold);
+    color: var(--ink);
+  }
+
+  .float-video.hidden {
+    display: none;
+  }
+
+  /* "Show video" pill shown after the user dismisses the player */
+  .video-reopen {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1500;
+    background: rgba(26, 21, 18, 0.85);
+    color: var(--gold-light);
+    border: 1px solid rgba(212, 169, 98, 0.3);
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.55rem 0.9rem;
+    border-radius: 100px;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    gap: 0.4rem;
+    backdrop-filter: blur(6px);
+    transition: background var(--duration-fast), color var(--duration-fast);
+  }
+
+  .video-reopen.visible {
+    display: inline-flex;
+  }
+
+  .video-reopen:hover {
+    background: var(--gold);
+    color: var(--ink);
+  }
+
+  /* Push the slide-progress dots down to the bottom on every screen size,
+     so they never read as a video carousel under the floating player. */
+  @media (min-width: 768px) {
+    .progress-dots {
+      top: auto;
+      bottom: 5rem;
+      left: 50%;
+      right: auto;
+      transform: translateX(-50%);
+    }
+  }
+
   /* ===== Responsive ===== */
   @media (max-width: 900px) {
     .story-grid {
@@ -375,10 +480,46 @@
       font-size: 0.6rem;
     }
   }
+
+  /* Mobile: floating video centers at the top, just below the back link */
+  @media (max-width: 767px) {
+    .float-video {
+      top: 3rem;
+      right: auto;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100vw - 2rem);
+      max-width: 280px;
+    }
+
+    .video-reopen {
+      top: 1rem;
+      right: 1rem;
+    }
+  }
 </style>
 </head>
 <body>
 <div class="grain"></div>
+
+<!-- Floating sermon video. Stays fixed while the slide deck is navigated.
+     Replace the YouTube ID in the iframe src with the real video ID. -->
+<aside class="float-video" id="floatVideo">
+  <button type="button" class="float-video-close" aria-label="Hide video"
+          onclick="document.getElementById('floatVideo').classList.add('hidden'); document.getElementById('videoReopen').classList.add('visible');">×</button>
+  <div class="float-video-frame">
+    <iframe
+      src="https://www.youtube.com/embed/jNQXAC9IVRw"
+      title="Sermon video"
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen></iframe>
+  </div>
+</aside>
+
+<button type="button" class="video-reopen" id="videoReopen" aria-label="Show video"
+        onclick="document.getElementById('floatVideo').classList.remove('hidden'); this.classList.remove('visible');">▶ Show video</button>
 
 <a href="../series/five-crossings.html" class="back-link">← Back to Series</a>
 
