@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Five Crossings — One Sermon — Five Crossings</title>
+<meta name="description" content="The whole Moses journey in twenty-five minutes — bush, sea, mountain, calf, giants. Five thresholds, one yes.">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Five Crossings — One Sermon">
+<meta property="og:description" content="The whole Moses journey in twenty-five minutes — bush, sea, mountain, calf, giants. Five thresholds, one yes.">
+
+<!-- Base Styles -->
+<link rel="stylesheet" href="../assets/css/base.css">
+
+<!-- Specific styles for this sermon -->
+<style>
+  html, body {
+    overflow: hidden;
+    background: var(--ink);
+  }
+
+  /* ===== Slide type variations ===== */
+  .slide-title {
+    background: var(--ink);
+    color: var(--parchment);
+  }
+
+  .slide-title .bg-word {
+    position: absolute;
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(16rem, 38vw, 44rem);
+    color: var(--parchment);
+    opacity: 0.04;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    line-height: 0.8;
+    letter-spacing: -0.05em;
+    user-select: none;
+  }
+
+  .slide-title h1 {
+    position: relative;
+    z-index: 2;
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  .slide-title h1 .line2 {
+    display: block;
+    font-weight: 800;
+    font-style: normal;
+    color: var(--gold-light);
+  }
+
+  .slide-title .tagline {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-top: 2.5rem;
+    opacity: 0.8;
+  }
+
+  .slide-title .sub {
+    max-width: 46ch;
+    margin-top: 1.8rem;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    opacity: 0.75;
+    font-style: italic;
+  }
+
+  /* ===== Opener slides ===== */
+  .slide-opener .numeral {
+    font-family: var(--display);
+    font-weight: 200;
+    font-style: italic;
+    font-size: clamp(8rem, 18vw, 16rem);
+    color: var(--gold);
+    line-height: 0.9;
+    margin-bottom: -1rem;
+    display: block;
+  }
+
+  .slide-opener h2 {
+    font-weight: 600;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    margin-bottom: 2rem;
+  }
+
+  .slide-opener .opener-text {
+    max-width: 60ch;
+    font-size: 1.35rem;
+    line-height: 1.6;
+    color: #3a332c;
+    border-left: 2px solid var(--gold);
+    padding-left: 1.5rem;
+  }
+
+  /* ===== Story slides ===== */
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .story-left .verse-ref {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--ink);
+    color: var(--parchment);
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+  }
+
+  .story-left h2 {
+    margin-bottom: 2rem;
+    font-weight: 600;
+  }
+
+  .story-left .character {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin-bottom: 0.75rem;
+  }
+
+  .beats {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .beat {
+    position: relative;
+    padding-left: 2.5rem;
+  }
+
+  .beat::before {
+    content: attr(data-step);
+    position: absolute;
+    left: 0; top: 0.1rem;
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.8rem;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .beat h4 {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink);
+    opacity: 0.55;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+
+  .beat p {
+    font-size: 1.1rem;
+    line-height: 1.55;
+    color: #3a332c;
+  }
+
+  /* ===== Reflection slides ===== */
+  .slide-reflect .bg-quote {
+    position: absolute;
+    top: 2rem; left: 4rem;
+    font-family: var(--display);
+    font-size: 20rem;
+    line-height: 1;
+    color: var(--gold);
+    opacity: 0.15;
+    font-style: italic;
+    user-select: none;
+  }
+
+  .slide-reflect h2 {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--parchment);
+    position: relative;
+    z-index: 2;
+  }
+
+  .slide-reflect h2 .emphasis {
+    font-weight: 800;
+    font-style: normal;
+    color: var(--gold-light);
+  }
+
+  .slide-reflect .questions {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    max-width: 60ch;
+  }
+
+  .slide-reflect .questions p {
+    font-size: 1.35rem;
+    line-height: 1.5;
+    padding-left: 1.5rem;
+    border-left: 1px solid var(--gold);
+    opacity: 0.9;
+  }
+
+  /* ===== Truths slide (numbered list) ===== */
+  .slide-truths .truths-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 3rem;
+    margin-top: 2.5rem;
+    max-width: 900px;
+  }
+
+  .truth-item {
+    position: relative;
+    padding-left: 3rem;
+  }
+
+  .truth-item::before {
+    content: attr(data-num);
+    position: absolute;
+    left: 0; top: -0.2rem;
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 2.5rem;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .truth-item p {
+    font-size: 1.15rem;
+    line-height: 1.5;
+    color: var(--parchment);
+    opacity: 0.9;
+  }
+
+  /* ===== Closing slide ===== */
+  .slide-closing .inner {
+    max-width: 700px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .slide-closing h2 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: 2rem;
+  }
+
+  .slide-closing h2 strong {
+    display: block;
+    font-weight: 800;
+    font-style: normal;
+    color: var(--gold-light);
+    margin-top: 0.5rem;
+  }
+
+  .slide-closing .prayer {
+    font-style: italic;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    max-width: 52ch;
+    color: rgba(244, 236, 220, 0.85);
+    margin-top: 1rem;
+    border-left: 1px solid var(--gold);
+    padding-left: 1.5rem;
+    text-align: left;
+  }
+
+  .slide-closing .signature {
+    margin-top: 3rem;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    opacity: 0.5;
+  }
+
+  .ornament {
+    font-family: var(--display);
+    font-size: 3rem;
+    color: var(--gold);
+    margin: 2rem 0;
+    letter-spacing: 1rem;
+  }
+
+  /* ===== Back to series link ===== */
+  .back-link {
+    position: fixed;
+    top: 1.5rem;
+    left: 1.5rem;
+    z-index: 1000;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(244, 236, 220, 0.6);
+    text-decoration: none;
+    background: rgba(26, 21, 18, 0.6);
+    backdrop-filter: blur(6px);
+    padding: 0.5rem 0.9rem;
+    border-radius: 100px;
+    transition: color var(--duration-fast);
+  }
+
+  .back-link:hover {
+    color: var(--gold-light);
+  }
+
+  /* ===== Key hint ===== */
+  .keyhint {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 1000;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: rgba(244, 236, 220, 0.5);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    background: rgba(26, 21, 18, 0.6);
+    backdrop-filter: blur(6px);
+    padding: 0.5rem 0.8rem;
+    border-radius: 100px;
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 900px) {
+    .story-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .slide-reflect .bg-quote {
+      font-size: 10rem;
+      left: 1rem;
+      top: 0.5rem;
+    }
+
+    .slide-truths .truths-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .keyhint {
+      display: none;
+    }
+
+    .back-link {
+      top: 1rem;
+      left: 1rem;
+      font-size: 0.6rem;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<a href="../series/five-crossings.html" class="back-link">← Back to Series</a>
+
+<div class="deck" id="deck">
+
+  <!-- SLIDE 1: Cover -->
+  <section class="slide slide-title theme-dark active">
+    <span class="corner-mark tl">One Sermon · Five Crossings</span>
+    <span class="corner-mark br">Exodus 3 — Numbers 14</span>
+    <div class="bg-word fade-in">crossings</div>
+    <div class="slide-inner" style="text-align: left;">
+      <p class="eyebrow anim-1" style="color: var(--gold-light);">One sermon · Twenty-five minutes</p>
+      <h1 class="anim-2">
+        Five&nbsp;Crossings
+        <span class="line2">One&nbsp;Yes.</span>
+      </h1>
+      <p class="sub anim-3">
+        Bush, sea, mountain, calf, giants — the whole Moses journey in a single passage. Five thresholds. One question that won't leave.
+      </p>
+      <p class="tagline anim-4">Hear · Trust · Wait · Hold · Believe</p>
+    </div>
+  </section>
+
+  <!-- SLIDE 2: Introduction -->
+  <section class="slide slide-opener theme-opener">
+    <span class="corner-mark tl">00 · Introduction</span>
+    <div class="slide-inner">
+      <span class="numeral anim-1">§</span>
+      <p class="eyebrow anim-2">Key verse</p>
+      <h2 class="anim-3">"These things were written for us."</h2>
+      <p class="opener-text anim-4">
+        Moses didn't reach the promise in a straight line. He crossed five thresholds — bush, sea, mountain, calf, giants — and each one tested a different part of him. Paul says they were <em class="accent">written for us, on whom the ends of the ages have come.</em> Today, all five — at speed. — 1 Corinthians 10:11
+      </p>
+    </div>
+  </section>
+
+  <!-- ACT I — THE FIRST TWO -->
+  <section class="slide slide-opener theme-opener">
+    <span class="corner-mark tl">Act I · of 03</span>
+    <div class="slide-inner">
+      <span class="numeral anim-1">I.</span>
+      <p class="eyebrow anim-2">Act one · The beginning</p>
+      <h2 class="anim-3">When God Interrupts.<br>When God Traps.</h2>
+      <p class="opener-text anim-4">
+        The journey starts with two crossings that don't feel like crossings — one in the desert, one at the edge of a sea. The first asks if you'll <em class="accent">answer</em>. The second asks if you'll <em class="accent">move</em> when there's nowhere to go.
+      </p>
+    </div>
+  </section>
+
+  <!-- SLIDE: Crossing 1 — The Bush -->
+  <section class="slide">
+    <span class="corner-mark tl">I.1 · Crossing one — the bush</span>
+    <div class="slide-inner">
+      <div class="story-grid">
+        <div class="story-left">
+          <p class="character anim-1">Moses</p>
+          <span class="verse-ref anim-2">Exodus 3:1-15</span>
+          <h2 class="anim-3">An interrupted routine.<br>A holy ground.</h2>
+        </div>
+        <div class="beats">
+          <div class="beat anim-4" data-step="i.">
+            <h4>The ordinary</h4>
+            <p>Moses is tending sheep. No spiritual peak — another day in Midian. The call comes during work, not after it.</p>
+          </div>
+          <div class="beat anim-5" data-step="ii.">
+            <h4>The excuses</h4>
+            <p>"Who am I?" Five times Moses argues. Five times God answers. Every "no" we give still fits one of his.</p>
+          </div>
+          <div class="beat anim-6" data-step="iii.">
+            <h4>The truth</h4>
+            <p>It's not about who you are. It's about <em class="accent">Who calls you.</em></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: Crossing 2 — The Sea -->
+  <section class="slide">
+    <span class="corner-mark tl">I.2 · Crossing two — the sea</span>
+    <div class="slide-inner">
+      <div class="story-grid">
+        <div class="story-left">
+          <p class="character anim-1">Israel</p>
+          <span class="verse-ref anim-2">Exodus 14:10-31</span>
+          <h2 class="anim-3">The army behind.<br>The water ahead.</h2>
+        </div>
+        <div class="beats">
+          <div class="beat anim-4" data-step="i.">
+            <h4>The trap</h4>
+            <p>Pharaoh closing in. Sea blocking the way. No human exit. The very route of obedience leads to a wall.</p>
+          </div>
+          <div class="beat anim-5" data-step="ii.">
+            <h4>The command</h4>
+            <p>"Stand still and see." Then: "Move forward." Faith stops to look — and then walks anyway.</p>
+          </div>
+          <div class="beat anim-6" data-step="iii.">
+            <h4>The truth</h4>
+            <p>The impossible isn't a problem for God. It's the room He needs to act.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: Reflection — bush + sea -->
+  <section class="slide slide-reflect theme-dark">
+    <span class="corner-mark tl">I · Reflection</span>
+    <div class="bg-quote">&ldquo;</div>
+    <div class="slide-inner">
+      <p class="eyebrow anim-1" style="color: var(--gold-light);">Two crossings, one lesson</p>
+      <h2 class="anim-2">He calls<br>before you're ready.<br><span class="emphasis">He delivers<br>before you've solved it.</span></h2>
+      <div class="questions">
+        <p class="anim-3">The bush appears mid-shift. The sea opens mid-step. There is never a calm moment to start.</p>
+        <p class="anim-4">What "yes" have you been saving for the day everything finally makes sense?</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACT II — THE MIDDLE -->
+  <section class="slide slide-opener theme-opener">
+    <span class="corner-mark tl">Act II · of 03</span>
+    <div class="slide-inner">
+      <span class="numeral anim-1">II.</span>
+      <p class="eyebrow anim-2">Act two · The middle</p>
+      <h2 class="anim-3">The Wait.<br>The Substitute.</h2>
+      <p class="opener-text anim-4">
+        The next two crossings are slower and quieter. One happens on a mountain in cloud. The other happens at the foot of that same mountain, when the cloud refuses to lift. They are <em class="accent">mirror images</em> — same forty days, two opposite responses.
+      </p>
+    </div>
+  </section>
+
+  <!-- SLIDE: Crossing 3 — The Mountain -->
+  <section class="slide">
+    <span class="corner-mark tl">II.3 · Crossing three — the mountain</span>
+    <div class="slide-inner">
+      <div class="story-grid">
+        <div class="story-left">
+          <p class="character anim-1">Moses</p>
+          <span class="verse-ref anim-2">Exodus 24:18</span>
+          <h2 class="anim-3">Forty days<br>in the silence.</h2>
+        </div>
+        <div class="beats">
+          <div class="beat anim-4" data-step="i.">
+            <h4>The wait</h4>
+            <p>God doesn't speak quickly. Moses sits inside a cloud while the people below watch the cloud and lose patience.</p>
+          </div>
+          <div class="beat anim-5" data-step="ii.">
+            <h4>The forming</h4>
+            <p>The wait isn't wasted. Tablets are being written. The timing isn't slow — it's deliberate.</p>
+          </div>
+          <div class="beat anim-6" data-step="iii.">
+            <h4>The truth</h4>
+            <p>God uses the wait to prepare you for what's coming, not to keep you from it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: Crossing 4 — The Calf -->
+  <section class="slide">
+    <span class="corner-mark tl">II.4 · Crossing four — the calf</span>
+    <div class="slide-inner">
+      <div class="story-grid">
+        <div class="story-left">
+          <p class="character anim-1">Israel</p>
+          <span class="verse-ref anim-2">Exodus 32:1-6</span>
+          <h2 class="anim-3">When God seemed late,<br>they made one fast.</h2>
+        </div>
+        <div class="beats">
+          <div class="beat anim-4" data-step="i.">
+            <h4>The absence</h4>
+            <p>Forty days felt like forever. Familiar leader gone. Sky silent. Comfort overdue.</p>
+          </div>
+          <div class="beat anim-5" data-step="ii.">
+            <h4>The substitute</h4>
+            <p>"Make us gods." A calf cast in a single afternoon. Worship that fits their schedule and asks nothing back.</p>
+          </div>
+          <div class="beat anim-6" data-step="iii.">
+            <h4>The truth</h4>
+            <p>What you reach for when God seems late is what you actually believe about Him.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: Reflection — mountain + calf -->
+  <section class="slide slide-reflect theme-dark">
+    <span class="corner-mark tl">II · Reflection</span>
+    <div class="bg-quote">&ldquo;</div>
+    <div class="slide-inner">
+      <p class="eyebrow anim-1" style="color: var(--gold-light);">Same forty days, opposite endings</p>
+      <h2 class="anim-2">Waiting reveals<br>what you trust.<br><span class="emphasis">Absence reveals<br>what you worship.</span></h2>
+      <div class="questions">
+        <p class="anim-3">One man came down with the law. A whole people came up with a calf. Same wait, different worship.</p>
+        <p class="anim-4">When God goes quiet on you, what do you reach for in the meantime?</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: Crossing 5 — The Giants -->
+  <section class="slide">
+    <span class="corner-mark tl">III.5 · Crossing five — the giants</span>
+    <div class="slide-inner">
+      <div class="story-grid">
+        <div class="story-left">
+          <p class="character anim-1">Twelve spies</p>
+          <span class="verse-ref anim-2">Numbers 13-14</span>
+          <h2 class="anim-3">Two reports.<br>One land.<br>One choice.</h2>
+        </div>
+        <div class="beats">
+          <div class="beat anim-4" data-step="i.">
+            <h4>The ten</h4>
+            <p>"We are like grasshoppers." Same land, same fruit — but their eyes won't leave the giants.</p>
+          </div>
+          <div class="beat anim-5" data-step="ii.">
+            <h4>The two</h4>
+            <p>Caleb and Joshua see the same giants. They also see a bigger God. "We are well able."</p>
+          </div>
+          <div class="beat anim-6" data-step="iii.">
+            <h4>The cost</h4>
+            <p>The generation that focused on the giants died in the wilderness. The promise was never the problem. The lens was.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: Reflection — giants -->
+  <section class="slide slide-reflect theme-dark">
+    <span class="corner-mark tl">III · Reflection</span>
+    <div class="bg-quote">&ldquo;</div>
+    <div class="slide-inner">
+      <p class="eyebrow anim-1" style="color: var(--gold-light);">At the threshold of the promise</p>
+      <h2 class="anim-2">The size of your giants<br>reveals<br><span class="emphasis">the size of your God.</span></h2>
+      <div class="questions">
+        <p class="anim-3">You aren't stuck because the giants are too big. You're stuck because you forgot Who is going with you.</p>
+        <p class="anim-4">What threshold has your fear talked you out of crossing this year?</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE: Five truths -->
+  <section class="slide slide-truths theme-dark">
+    <span class="corner-mark tl">Truths · five crossings</span>
+    <div class="slide-inner">
+      <p class="eyebrow anim-1" style="color: var(--gold-light);">What every threshold says</p>
+      <h2 class="anim-2" style="font-family: var(--display); font-style: italic; font-weight: 300; color: var(--parchment);">Five crossings. Five truths.</h2>
+      <div class="truths-grid">
+        <div class="truth-item anim-3" data-num="1.">
+          <p><strong style="color: var(--gold-light);">Bush.</strong> God calls in the middle of the ordinary, not after it.</p>
+        </div>
+        <div class="truth-item anim-4" data-num="2.">
+          <p><strong style="color: var(--gold-light);">Sea.</strong> Impossibility is the room God needs to act.</p>
+        </div>
+        <div class="truth-item anim-5" data-num="3.">
+          <p><strong style="color: var(--gold-light);">Mountain.</strong> Waiting is forming. Don't quit the cloud.</p>
+        </div>
+        <div class="truth-item anim-6" data-num="4.">
+          <p><strong style="color: var(--gold-light);">Calf.</strong> Absence is a test of worship, not of patience.</p>
+        </div>
+        <div class="truth-item anim-6" data-num="5.">
+          <p><strong style="color: var(--gold-light);">Giants.</strong> Faith sees the same obstacle and a different God.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section class="slide slide-closing theme-dark">
+    <span class="corner-mark tl">Closing</span>
+    <div class="slide-inner inner">
+      <p class="eyebrow anim-1" style="color: var(--gold-light); justify-content: center;">The question that won't leave</p>
+      <h2 class="anim-2">What if it were you —<br><strong>at every crossing, today?</strong></h2>
+      <div class="ornament anim-3">· · ·</div>
+      <p class="prayer anim-4">
+        "Lord, I have stood at all five thresholds. I have heard the call and made excuses. I have stared at the sea and counted my exits. I have grown tired of the wait. I have built calves I'd rather not name. I have measured my giants and forgotten You. Today I take off my sandals. Today I move. I trust You at <em class="accent" style="color: var(--gold-light);">every</em> crossing. In Jesus' name, amen."
+      </p>
+      <p class="signature anim-5">Five Crossings · One Sermon · ~25 min</p>
+    </div>
+  </section>
+
+</div>
+
+<!-- Navigation -->
+<div class="progress-dots" id="dots"></div>
+
+<nav class="nav">
+  <button id="prev" aria-label="Previous">← Previous</button>
+  <span class="counter" id="counter">01 / 00</span>
+  <button id="next" aria-label="Next">Next →</button>
+</nav>
+
+<div class="keyhint">← → · space · home/end</div>
+
+<!-- Scripts -->
+<script src="../assets/js/slides.js"></script>
+
+</body>
+</html>
